@@ -16,11 +16,15 @@ class CreateBlEquiposTable extends Migration
         Schema::create('bl_equipos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_equipo');
-            $table->enum('estatus', ['Seleccione...', 'Activo', 'Inactivo'])->nullable()->default(['foo', 'bar']);
-            $table->enum('ubicacion', ['Seleccione...', 'Activo', 'Guardia'])->nullable()->default(['foo', 'bar']);
-            $table->enum('tipo_solicitud', ['Seleccione...', 'Soporte', 'Incidencia', 'Requerimiento', 'Proyecto'])->default('Seleccione...');
-            $table->string('descripcion_solic');
+            $table->enum('estatus', ['Seleccione...', 'Activo', 'Inactivo'])->default('Seleccione...');
+            $table->enum('ubicacion', ['Seleccione...', 'En sitio', 'Guardia'])->default('Seleccione...');
+            $table->string('serial');
+            $table->unsignedBigInteger('bl_especialistas_id');
             $table->timestamps();
+
+            $table->foreign('bl_especialistas_id')->references('id')->on('bl_especialistas')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
         });
     }
 
@@ -34,3 +38,4 @@ class CreateBlEquiposTable extends Migration
         Schema::dropIfExists('bl_equipos');
     }
 }
+
