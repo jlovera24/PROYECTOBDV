@@ -17,7 +17,7 @@ class CreateBlEquiposTable extends Migration
             $table->id();
             $table->string('tipo_equipo');
             $table->enum('estatus', ['Seleccione...', 'Activo', 'Inactivo'])->default('Seleccione...');
-            $table->enum('ubicacion', ['Seleccione...', 'En sitio', 'Guardia'])->default('Seleccione...');
+            $table->enum('ubicacion', ['Seleccione...', 'Puesto de Trabajo', 'Guardia remota'])->default('Seleccione...');
             $table->string('serial');
             $table->unsignedBigInteger('bl_especialistas_id');
             $table->timestamps();
