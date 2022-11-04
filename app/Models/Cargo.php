@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Cargo extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function cargo()
+    {
+        return $this->hasMany(Especialista::class);
+    }
 }

@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Especialista extends Model
 {
     //use HasFactory;
-    public function Cargos()
+    public function cargos()
     {
         return $this->hasMany(Cargo::class);
     }
 
-    public function Ubicaciones_Fisicas()
+    public function ubicaciones_Fisicas()
     {
         return $this->hasMany(Ubicacion_Fisica::class);
     }
