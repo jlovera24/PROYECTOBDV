@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Equipo extends Model
 {
-    use HasFactory;
+   // use HasFactory;
+   public function especialista()
+   {
+       return $this->belongsto(Especialista::class);
+   }
 }

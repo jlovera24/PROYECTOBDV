@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gerencia extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function especialistas()
+    {
+        return $this->hasMany(Especialista::class);
+    }
+
+    public function solicitantes()
+    {
+        return $this->hasMany(Solicitante::class);
+    }
+
 }

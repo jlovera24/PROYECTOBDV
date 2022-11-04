@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Seguimiento extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function solicitud()
+    {
+        return $this->belongsTo(Solicitud::class);
+    }
 }

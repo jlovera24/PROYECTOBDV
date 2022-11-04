@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Libra extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function solicitudes()
+    {
+        return $this->hasMany(Solicitud::class);
+    }
 }

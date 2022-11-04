@@ -8,13 +8,41 @@ use Illuminate\Database\Eloquent\Model;
 class Especialista extends Model
 {
     //use HasFactory;
-    public function cargos()
+    public function direcciones()
     {
-        return $this->hasMany(Cargo::class);
+        return $this->belongsToMany(Direccion::class);
     }
 
-    public function ubicaciones_Fisicas()
+    public function telefonos()
     {
-        return $this->hasMany(Ubicacion_Fisica::class);
+        return $this->belongsToMany(Telefono::class);
     }
+
+    public function cargo()
+    {
+        return $this->belongsTo(Cargo::class);
+    }
+
+    public function ubicacion_Fisica()
+    {
+        return $this->belongsTo(Ubicacion_Fisica::class);
+    }
+
+    public function gerencia()
+    {
+        return $this->belongsTo(Gerencia::class);
+    }
+    
+    public function solicitudes()
+    {
+        return $this->belongsToMany(Solicitud::class);
+    }
+
+    public function equipos()
+    {
+        return $this->hasMany(Equipo::class);
+    }
+
+    
+
 }

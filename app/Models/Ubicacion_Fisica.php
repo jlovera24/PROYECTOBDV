@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ubicacion_Fisica extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function especialistas()
+    {
+        return $this->hasMany(Especialista::class);
+    }
 }

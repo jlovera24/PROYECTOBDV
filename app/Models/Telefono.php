@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Telefono extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function especialistas()
+    {
+        return $this->belongsToMany(Especialista::class);
+    }
 }

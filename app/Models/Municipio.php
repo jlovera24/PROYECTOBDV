@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Municipio extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function direcciones()
+    {
+        return $this->hasMany(Direccion::class);
+    }
 }

@@ -7,5 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Direccion extends Model
 {
-    use HasFactory;
+    //use HasFactory;
+    public function ciudad()
+    {
+        return $this->belongsTo(Ciudad::class);
+    }
+    public function estado()
+    {
+        return $this->belongsTo(Estado::class);
+    }
+    public function parroquia()
+    {
+        return $this->belongsTo(Parroquia::class);
+    }
+    public function municipio()
+    {
+        return $this->belongsTo(Municipio::class);
+    }
+    public function especialistas()
+    {
+        return $this->belongsToMany(Especialista::class);
+    }
 }
