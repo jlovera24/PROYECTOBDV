@@ -15,11 +15,11 @@ class CreateBlEspecialistasTable extends Migration
     {
         Schema::create('bl_especialistas', function (Blueprint $table) {
             $table->id();
+            $table->string('nm_ct');
             $table->string('nombres');
             $table->string('apellidos');
             $table->string('cedula');
             $table->date('fech_nacimiento');
-            $table->string('nm_ct');
             $table->date('fec_ing');
             $table->date('fec_ing_dpto');
             $table->string('email');         

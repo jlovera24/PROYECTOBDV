@@ -15,9 +15,9 @@ class CreateBlLibrasTable extends Migration
     {
         Schema::create('bl_libras', function (Blueprint $table) {
             $table->id();
+            $table->string('nom_aplicacion');
             $table->integer('codigo');
             $table->string('acronimo');
-            $table->string('nom_aplicacion');
             $table->string('observaciones');
             $table->timestamps();
         });
