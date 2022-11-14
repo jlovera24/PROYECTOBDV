@@ -243,23 +243,50 @@ return [
         ],
         [
             'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'url'         => 'admin/',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
+            'text' => 'Cargos',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Especialistas',
+            'url'  => 'admin.posts.index',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+        [
+            'text' => 'Solicitantes',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
+            'text' => 'Solicitudes',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-file',
         ],
         [
+            'text' => 'Libras',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        
+        [
+            'text' => 'Gerencias',
+            'url'  => 'admin/gerencia',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+        [
+            'text' => 'Ubicaciones Físicas',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-list',
+        ],
+
+/*        [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -297,6 +324,9 @@ return [
                 ],
             ],
         ],
+
+*/
+        
         ['header' => 'labels'],
         [
             'text'       => 'important',
@@ -314,6 +344,8 @@ return [
             'url'        => '#',
         ],
     ],
+
+
 
     /*
     |--------------------------------------------------------------------------
