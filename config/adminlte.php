@@ -230,6 +230,7 @@ return [
     |
     */
 
+    
     'menu' => [
         [
             'text' => 'search',
@@ -245,10 +246,13 @@ return [
             'text'        => 'pages',
             'url'         => 'admin/',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
+            'label'       => 1,
             'label_color' => 'success',
         ],
+
         ['header' => 'account_settings'],
+
+/*        
         [
             'text' => 'Cargos',
             'url'  => '',
@@ -277,7 +281,7 @@ return [
         
         [
             'text' => 'Gerencias',
-            'url'  => 'admin/gerencia',
+            'url'  => 'admin/gerencia/index',
             'icon' => 'fas fa-fw fa-list',
         ],
         [
@@ -285,6 +289,124 @@ return [
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-list',
         ],
+
+        */
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+        [
+            'text'    => 'Gerencias',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => 'admin/gerencia/index',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Cargos',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Especialistas',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Solicitantes',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Solicitudes',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Libras',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Ubicaciones Físicas',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
 
 /*        [
             'text'    => 'multilevel',
