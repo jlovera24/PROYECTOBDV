@@ -38,4 +38,27 @@ class GerenciaController extends Controller
         return view('admin.Gerencias.delete');
     }
 
+    public function edit($id)
+    {
+        //$gerencia = Gerencia::all();
+        $gerencia = Gerencia::find($id);
+        return view("admin.Gerencias.edit", compact('gerencia'));
+        
+    }
+
+    public function update(Request $request, $id)
+    {
+        //$gerencia = Gerencia::all();
+        $gerencia = Gerencia::find($id);
+        $gerencia->gerencia = $request->post('gerencia');
+        $gerencia->gerencia_linea = $request->post('gerencia_linea');
+        $gerencia->descripcion = $request->post('descripcion');
+        $gerencia->save();
+
+        return redirect()->route("gerencia.index")->with("success", "¡Actualización realizada exitosamente!");
+        
+
+        return redirect()->route("gerencia.index")->with("success", "¡Registro agregado exitosamente!");
+    }
+
 }

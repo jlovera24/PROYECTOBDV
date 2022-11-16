@@ -22,6 +22,8 @@ Route::get('admin/gerencia/index', [App\Http\Controllers\GerenciaController::cla
 Route::get('admin/gerencia/create', [App\Http\Controllers\GerenciaController::class, 'create'])->name('gerencia.create');
 Route::get('admin/gerencia/show', [App\Http\Controllers\GerenciaController::class, 'show'])->name('gerencia.show');
 Route::post('admin/gerencia/store', [App\Http\Controllers\GerenciaController::class, 'store'])->name('gerencia.store');
+Route::get('admin/gerencia/edit/{id}', [App\Http\Controllers\GerenciaController::class, 'edit'])->name('gerencia.edit');
+Route::put('admin/gerencia/update/{id}', [App\Http\Controllers\GerenciaController::class, 'update'])->name('gerencia.update');
 
 
 /*
