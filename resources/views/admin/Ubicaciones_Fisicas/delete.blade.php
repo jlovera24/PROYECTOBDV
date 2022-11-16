@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Módulo de Gerencia</h1>
+    <h1>Módulo de Ubicaciones Físicas</h1>
 @stop
 
 @section('content')
@@ -25,11 +25,11 @@
 
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <th>{{$gerencia->id}}</th>
-          <td>{{$gerencia->gerencia}}</td>
-          <td>{{$gerencia->gerencia_linea}}</td>
-          <td>{{$gerencia->descripcion}}</td>
-          <td>{{$gerencia->updated_at}}</td>
+          <th>{{$ubicaiones_fisicas->id}}</th>
+          <td>{{$ubicaiones_fisicas->ubicaiones_fisicas}}</td>
+          <td>{{$ubicaiones_fisicas->ubicaiones_fisicas_linea}}</td>
+          <td>{{$ubicaiones_fisicas->descripcion}}</td>
+          <td>{{$ubicaiones_fisicas->updated_at}}</td>
         </tr>
 
       
@@ -39,7 +39,7 @@
     
       
 
-      <form action="{{route('gerencia.destroy', $gerencia->id)}}" method="POST">
+      <form action="{{route('ubicaiones_fisicas.destroy', $ubicaiones_fisicas->id)}}" method="POST">
       @csrf
       @method('DELETE')
         <button class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -49,7 +49,7 @@
         </button>
       </form>  
 
-      <a href="{{route('gerencia.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+      <a href="{{route('ubicaiones_fisicas.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
       </svg> Regresar</a>
 

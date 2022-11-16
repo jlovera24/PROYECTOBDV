@@ -317,11 +317,27 @@ return [
             'submenu' => [
                 [
                     'text' => 'Consultar',
-                    'url'  => '#',
+                    'url'  => 'admin/cargo/index',
                 ],
                 [
                     'text'    => 'Registrar',
-                    'url'     => '#',
+                    'url'     => 'admin/cargo/create',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Ubicaciones Físicas',
+            'icon'    => 'fas fa-fw fa-list',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'url'  => 'admin/ubicacion_fisica/index',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'url'     => 'admin/ubicacion_fisica/create',
                 ],
                         
             ],
@@ -391,21 +407,7 @@ return [
             ],
         ],
 
-        [
-            'text'    => 'Ubicaciones Físicas',
-            'icon'    => 'fas fa-fw fa-list',
-            'submenu' => [
-                [
-                    'text' => 'Consultar',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Registrar',
-                    'url'     => '#',
-                ],
-                        
-            ],
-        ],
+        
 
 
 /*        [
