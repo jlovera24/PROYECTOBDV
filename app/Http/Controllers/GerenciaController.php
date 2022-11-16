@@ -32,10 +32,11 @@ class GerenciaController extends Controller
         return redirect()->route("gerencia.index")->with("success", "¡Registro agregado exitosamente!");
     }
 
-    public function show()
+    public function show($id)
     {
         //$gerencia = Gerencia::all();
-        return view('admin.Gerencias.delete');
+        $gerencia = Gerencia::find($id);
+        return view("admin.Gerencias.delete", compact('gerencia'));
     }
 
     public function edit($id)
@@ -56,9 +57,15 @@ class GerenciaController extends Controller
         $gerencia->save();
 
         return redirect()->route("gerencia.index")->with("success", "¡Actualización realizada exitosamente!");
-        
+    }
 
-        return redirect()->route("gerencia.index")->with("success", "¡Registro agregado exitosamente!");
+    public function destroy($id)
+    {
+        //$gerencia = Gerencia::all();
+        $gerencia = Gerencia::find($id);
+        $gerencia->delete();
+        return redirect()->route("gerencia.index")->with("success", "¡Se ha eliminado el registro seleccionado!");
+        
     }
 
 }
