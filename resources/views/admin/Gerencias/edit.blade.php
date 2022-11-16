@@ -9,14 +9,6 @@
 @section('content')
     <p>Bienvenido</p>
 
-    <p>
-      <a href="{{route("gerencia.create") }}" class="btn btn-primary">Agregar nueva Gerencia</a>
-    </p>
-
-  <!--   @php
-        print_r($gerencia);
-    @endphp -->
-
     <table class="table">
       <thead>
         <tr>
@@ -25,7 +17,6 @@
           <th scope="col">Gerencia de Línea</th>
           <th scope="col">Descripción</th>
           <th scope="col">Fecha de actualización</th>
-          <th scope="col-2">Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -39,8 +30,6 @@
           <td>{{$item->gerencia_linea}}</td>
           <td>{{$item->descripcion}}</td>
           <td>{{$item->updated_at}}</td>
-          <td><a href="#" class="btn btn-primary">Modificar</a></td>
-          <td><a href="#" class="btn btn-danger">Eliminar</a></td>
         </tr>
 
       @endforeach

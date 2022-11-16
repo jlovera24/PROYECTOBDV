@@ -304,7 +304,7 @@ return [
                 ],
                 [
                     'text'    => 'Registrar',
-                    'url'     => '#',
+                    'url'     => 'admin/gerencia/create',
                 ],
                 
                         
