@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gerencia extends Model
 {
+    protected $table = 'bl_gerencias';
     //use HasFactory;
     public function especialistas()
     {
@@ -19,3 +20,4 @@ class Gerencia extends Model
     }
 
 }
+
