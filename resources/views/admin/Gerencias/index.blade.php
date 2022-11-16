@@ -9,13 +9,13 @@
 @section('content')
     <p>Bienvenido</p>
 
-    <form class="row g-3">
+    <form class="row g-3" autocomplete="off">
   <div class="col-md-6">
-    <label for="inputEmail4" class="form-label">Email</label>
-    <input type="email" class="form-control" id="inputEmail4" placeholder="Correo@banvenez.com" value="">
+    <label for="inputEmail4" class="form-label">Gerencia</label>
+    <input type="email" class="form-control" id="inputEmail4" placeholder="Correo@banvenez.com">
   </div>
   <div class="col-md-6">
-    <label for="inputPassword4" class="form-label">Password</label>
+    <label for="inputPassword4" class="form-label">Gerencia de Línea</label>
     <input type="password" class="form-control" id="inputPassword4">
   </div>
 
