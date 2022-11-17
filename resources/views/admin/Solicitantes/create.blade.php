@@ -26,16 +26,15 @@
     <input name="email" type="text" class="form-control" id="email" placeholder="Escribe solo correos corporativos" required>
   </div>
   
-
-  <select for="bl_gerencias_id" name="bl_gerencias_id" id="bl_gerencias_id" class="form-control">
+<div>
+  <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
 
     @foreach ($gerencia as $item)
     <option value="{{$item->id}}">{{$item->gerencia}}</option>
-        
     @endforeach
     
   </select>
-
+</div>
 
   
   <div class="col-12">

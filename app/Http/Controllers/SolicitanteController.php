@@ -12,7 +12,8 @@ class SolicitanteController extends Controller
     public function index()
     {
         $solicitante = Solicitante::all();
-        return view('admin.Solicitantes.index', compact('solicitante'));
+        $gerencia = Gerencia::all();
+        return view('admin.Solicitantes.index', compact('solicitante', 'gerencia'));
     }
 
     public function create()
@@ -32,7 +33,7 @@ class SolicitanteController extends Controller
         $solicitante->apellido = $request->post('apellido');
         $solicitante->email = $request->post('email');
         $solicitante->bl_gerencias_id = $request->post('bl_gerencias_id');
-        $solicitante->save();
+        $solicitante->save(); 
 
         return redirect()->route("solicitante.index")->with("success", "¡Registro agregado exitosamente!");
     }

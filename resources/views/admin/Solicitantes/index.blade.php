@@ -51,7 +51,7 @@
           <th scope="col">Nombres</th>
           <th scope="col">Apellido</th>
           <th scope="col">Email</th>
-          <th scope="col">ID Gerencia</th>
+          <th scope="col">Gerencia</th>
           <th scope="col">Fecha de Actualización</th>
           <th scope="col-2">Modificar</th>
           <th scope="col-2">Eliminar</th>
@@ -59,14 +59,22 @@
       </thead>
       <tbody>
 
+  <!-- /*   @foreach ($gerencia as $ite )
+      {{$gerencia = $ite->gerencia}}
+            
+      @endforeach  */ -->
+
+      
+
       @foreach ($solicitante as $item)
+      
    
         <tr>
         <!--  <th scope="row">1</th>  -->
           <td>{{$item->nombres}}</td>
           <td>{{$item->apellido}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$item->bl_gerencias_id}}</td>
+          <td>{{$item->gerencia}}</td>
           <td>{{$item->updated_at}}</td>
 
 
@@ -95,6 +103,7 @@
           </td>
         </tr>
 
+      
       @endforeach
       </tbody>
     </table>
