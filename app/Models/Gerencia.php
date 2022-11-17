@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Gerencia extends Model
 {
     protected $table = 'bl_gerencias';
+    
     //use HasFactory;
+    
     public function especialistas()
     {
         return $this->hasMany(Especialista::class);

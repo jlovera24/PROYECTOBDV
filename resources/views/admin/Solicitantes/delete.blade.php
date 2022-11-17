@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Módulo de Aplicaciones</h1>
+    <h1>Módulo de Solicitantes Funcionales</h1>
 @stop
 
 @section('content')
@@ -14,21 +14,22 @@
     <table class="table table-hover !important">
       <thead>
         <tr>
-          <th scope="col">Nombre de Aplicación</th>
-          <th scope="col">Código Libra</th>
-          <th scope="col">Acrónimo</th>
-          <th scope="col">Observaciones</th>
+          <th scope="col">Nombres</th>
+          <th scope="col">Apellido</th>
+          <th scope="col">Email</th>
+          <th scope="col">ID Gerencia</th>
+          <th scope="col">Fecha de Actualización</th>
         </tr>
       </thead>
       <tbody>
 
         <tr>
         <!--  <th scope="row">1</th>  -->
-        <td>{{$libra->nom_aplicacion}}</td>
-        <td>{{$libra->codigo}}</td>
-        <td>{{$libra->acronimo}}</td>
-        <td>{{$libra->observaciones}}</td>
-        <td>{{$libra->updated_at}}</td>
+        <td>{{$solicitante->nombres}}</td>
+        <td>{{$solicitante->apellido}}</td>
+        <td>{{$solicitante->email}}</td>
+        <td>{{$solicitante->bl_gerencias_id}}</td>
+        <td>{{$solicitante->updated_at}}</td>
         </tr>
 
       
@@ -38,7 +39,7 @@
     
       
 
-      <form action="{{route('libra.destroy', $libra->id)}}" method="POST">
+      <form action="{{route('solicitante.destroy', $solicitante->id)}}" method="POST">
       @csrf
       @method('DELETE')
         <button class="btn btn-danger"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -48,7 +49,7 @@
         </button>
       </form>  
 
-      <a href="{{route('libra.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+      <a href="{{route('solicitante.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
       </svg> Regresar</a>
 

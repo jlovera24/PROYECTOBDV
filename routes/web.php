@@ -62,6 +62,16 @@ Route::get('admin/libra/edit/{id}', [App\Http\Controllers\LibraController::class
 Route::put('admin/libra/update/{id}', [App\Http\Controllers\LibraController::class, 'update'])->name('libra.update');
 Route::delete('admin/libra/destroy/{id}', [App\Http\Controllers\LibraController::class, 'destroy'])->name('libra.destroy');
 
+//Solicitantes
+
+Route::get('admin/solicitante/index', [App\Http\Controllers\SolicitanteController::class, 'index'])->name('solicitante.index');
+Route::get('admin/solicitante/create', [App\Http\Controllers\SolicitanteController::class, 'create'])->name('solicitante.create');
+Route::get('admin/solicitante/show/{id}', [App\Http\Controllers\SolicitanteController::class, 'show'])->name('solicitante.show');
+Route::post('admin/solicitante/store', [App\Http\Controllers\SolicitanteController::class, 'store'])->name('solicitante.store');
+Route::get('admin/solicitante/edit/{id}', [App\Http\Controllers\SolicitanteController::class, 'edit'])->name('solicitante.edit');
+Route::put('admin/solicitante/update/{id}', [App\Http\Controllers\SolicitanteController::class, 'update'])->name('solicitante.update');
+Route::delete('admin/solicitante/destroy/{id}', [App\Http\Controllers\SolicitanteController::class, 'destroy'])->name('solicitante.destroy');
+
 
 
 

@@ -243,7 +243,7 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'pages',
+            'text'        => 'Página Principal',
             'url'         => 'admin/',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 1,
@@ -556,12 +556,12 @@ return [
                 [
                     'text' => 'Consultar',
                     'icon'    => 'fas fa-search',
-                    'url'  => '#',
+                    'url'  => 'admin/solicitante/index',
                 ],
                 [
                     'text'    => 'Registrar',
                     'icon'    => 'fas fa-save',
-                    'url'     => '#',
+                    'url'     => 'admin/solicitante/create',
                 ],
                         
             ],

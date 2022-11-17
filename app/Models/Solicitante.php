@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Solicitante extends Model
 {
     //use HasFactory;
+    protected $table = 'bl_solicitantes';
+    
     public function gerencia()
     {
         return $this->belongsTo(Gerencia::class);
