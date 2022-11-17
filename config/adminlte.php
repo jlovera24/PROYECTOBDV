@@ -532,18 +532,18 @@ return [
 
         
         [
-            'text'    => 'Códigos Libra',
+            'text'    => 'Aplicaciones Funcionales',
             'icon'    => 'fas fa-fw fa-list', 
             'submenu' => [
                 [
                     'text' => 'Consultar',
                     'icon'    => 'fas fa-search',
-                    'url'  => '#',
+                    'url'  => 'admin/libra/index',
                 ],
                 [
                     'text'    => 'Registrar',
                     'icon'    => 'fas fa-save',
-                    'url'     => '#',
+                    'url'     => 'admin/libra/create',
                 ],
                         
             ],

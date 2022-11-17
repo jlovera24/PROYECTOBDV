@@ -52,6 +52,15 @@ Route::put('admin/ubicacion_fisica/update/{id}', [App\Http\Controllers\Ubicacion
 Route::delete('admin/ubicacion_fisica/destroy/{id}', [App\Http\Controllers\Ubicacion_FisicaController::class, 'destroy'])->name('ubicacion_fisica.destroy');
 
 
+//Libras
+
+Route::get('admin/libra/index', [App\Http\Controllers\LibraController::class, 'index'])->name('libra.index');
+Route::get('admin/libra/create', [App\Http\Controllers\LibraController::class, 'create'])->name('libra.create');
+Route::get('admin/libra/show/{id}', [App\Http\Controllers\LibraController::class, 'show'])->name('libra.show');
+Route::post('admin/libra/store', [App\Http\Controllers\LibraController::class, 'store'])->name('libra.store');
+Route::get('admin/libra/edit/{id}', [App\Http\Controllers\LibraController::class, 'edit'])->name('libra.edit');
+Route::put('admin/libra/update/{id}', [App\Http\Controllers\LibraController::class, 'update'])->name('libra.update');
+Route::delete('admin/libra/destroy/{id}', [App\Http\Controllers\LibraController::class, 'destroy'])->name('libra.destroy');
 
 
 

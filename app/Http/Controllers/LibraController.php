@@ -27,6 +27,7 @@ class LibraController extends Controller
         $libra->nom_aplicacion = $request->post('nom_aplicacion');
         $libra->codigo = $request->post('codigo');
         $libra->acronimo = $request->post('acronimo');
+        $libra->observaciones = $request->post('acronimo');
         $libra->save();
 
         return redirect()->route("libra.index")->with("success", "¡Registro agregado exitosamente!");
@@ -54,6 +55,7 @@ class LibraController extends Controller
         $libra->nom_aplicacion = $request->post('nom_aplicacion');
         $libra->codigo = $request->post('codigo');
         $libra->acronimo = $request->post('acronimo');
+        $libra->observaciones = $request->post('acronimo');
         $libra->save();
 
         return redirect()->route("libra.index")->with("success", "¡Actualización realizada exitosamente!");
