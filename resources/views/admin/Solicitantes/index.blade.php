@@ -11,6 +11,11 @@
 
     
 
+@php
+print_r($users);
+@endphp
+    
+
     <p>
       <a href="{{route("solicitante.create") }}" class="btn btn-primary"> 
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
@@ -19,7 +24,7 @@
         </svg> Agregar nuevo solicitante</a>
     </p>
 
-
+        
     
   <!--   @php
         print_r($solicitante);
@@ -59,11 +64,6 @@
       </thead>
       <tbody>
 
-  <!-- /*   @foreach ($gerencia as $ite )
-      {{$gerencia = $ite->gerencia}}
-            
-      @endforeach  */ -->
-
 
       @foreach ($solicitante as $item)
       
@@ -73,7 +73,7 @@
           <td>{{$item->nombres}}</td>
           <td>{{$item->apellido}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$item->bl_gerencias_id}}</td>
+          <td>{{$users}}</td>
           <td>{{$item->updated_at}}</td>
 
 
@@ -104,6 +104,8 @@
 
       
       @endforeach
+
+      
       </tbody>
     </table>
 
