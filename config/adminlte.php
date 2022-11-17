@@ -250,7 +250,7 @@ return [
             'label_color' => 'success',
         ],
 
-        ['header' => 'account_settings'],
+        
 
 /*        
         [
@@ -294,33 +294,78 @@ return [
 
 //////////////////////////////////////////////////////////////////////////////////////
 
+        ////////////////////////////////////////////////
+        ['header' => 'Módulos de Solicitudes'],
+
         [
-            'text'    => 'Gerencias',
-            'icon'    => 'fas fa-fw fa-list',
+            'text'    => 'Solicitudes',
+            'icon'    => 'fas fa-file-alt',
             'submenu' => [
                 [
                     'text' => 'Consultar',
-                    'url'  => 'admin/gerencia/index',
+                    'icon'    => 'fas fa-search',
+                    'url'  => '#',
                 ],
                 [
                     'text'    => 'Registrar',
-                    'url'     => 'admin/gerencia/create',
+                    'icon'    => 'fas fa-save',
+                    'url'     => '#',
                 ],
-                
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Seguimiento',
+            'icon'    => 'fas fa-clipboard-check',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        ////////////////////////////////////////////////
+        ['header' => 'Módulos Datos Internos Especialistas'],
+
+        [
+            'text'    => 'Datos Especialistas',
+            'icon'    => 'fas fa-user-friends',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => '#',
+                ],
                         
             ],
         ],
 
         [
             'text'    => 'Cargos',
-            'icon'    => 'fas fa-fw fa-list',
+            'icon'    => 'fas fa-user-tie', 
             'submenu' => [
                 [
                     'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
                     'url'  => 'admin/cargo/index',
                 ],
                 [
                     'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
                     'url'     => 'admin/cargo/create',
                 ],
                         
@@ -328,31 +373,176 @@ return [
         ],
 
         [
-            'text'    => 'Ubicaciones Físicas',
-            'icon'    => 'fas fa-fw fa-list',
+            'text'    => 'Direcciones',
+            'icon'    => 'fas fa-map-marker',
+            'submenu' => [
+                
+                [
+                    'text'    => 'Ciudad',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Estado',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Parroquia',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Municipio',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                
+            ],
+        ],
+
+        [
+            'text'    => 'Equipos Asignados',
+            'icon'    => 'fas fa-tv', 
             'submenu' => [
                 [
                     'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+        [
+            'text'    => 'Ubicaciones Físicas',
+            'icon'    => 'fas fa-building', 
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
                     'url'  => 'admin/ubicacion_fisica/index',
                 ],
                 [
                     'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
                     'url'     => 'admin/ubicacion_fisica/create',
                 ],
                         
             ],
         ],
 
+
+
         [
-            'text'    => 'Especialistas',
-            'icon'    => 'fas fa-fw fa-list',
+            'text'    => 'Teléfonos',
+            'icon'    => 'fas fa-phone-alt', 
             'submenu' => [
                 [
                     'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
                     'url'  => '#',
                 ],
                 [
                     'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => '#',
+                ],
+                        
+            ],
+        ],
+
+
+        
+        ////////////////////////////////////////////////
+        ['header' => 'Módulos de Gerencias'],
+
+        [
+            'text'    => 'Gerencias',
+            'icon'    => 'fas fa-briefcase',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => 'admin/gerencia/index',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => 'admin/gerencia/create',
+                ],
+                
+                        
+            ],
+        ],
+
+
+        
+        [
+            'text'    => 'Códigos Libra',
+            'icon'    => 'fas fa-fw fa-list', 
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => '#',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
                     'url'     => '#',
                 ],
                         
@@ -360,47 +550,17 @@ return [
         ],
 
         [
-            'text'    => 'Solicitantes',
-            'icon'    => 'fas fa-fw fa-list',
+            'text'    => 'Solicitantes (Funcionales)',
+            'icon'    => 'fas fa-users',
             'submenu' => [
                 [
                     'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
                     'url'  => '#',
                 ],
                 [
                     'text'    => 'Registrar',
-                    'url'     => '#',
-                ],
-                        
-            ],
-        ],
-
-        [
-            'text'    => 'Solicitudes',
-            'icon'    => 'fas fa-fw fa-list',
-            'submenu' => [
-                [
-                    'text' => 'Consultar',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Registrar',
-                    'url'     => '#',
-                ],
-                        
-            ],
-        ],
-
-        [
-            'text'    => 'Libras',
-            'icon'    => 'fas fa-fw fa-list',
-            'submenu' => [
-                [
-                    'text' => 'Consultar',
-                    'url'  => '#',
-                ],
-                [
-                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
                     'url'     => '#',
                 ],
                         
