@@ -64,7 +64,6 @@
             
       @endforeach  */ -->
 
-      
 
       @foreach ($solicitante as $item)
       
@@ -74,7 +73,7 @@
           <td>{{$item->nombres}}</td>
           <td>{{$item->apellido}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$item->gerencia}}</td>
+          <td>{{$item->bl_gerencias_id}}</td>
           <td>{{$item->updated_at}}</td>
 
 
