@@ -14,7 +14,6 @@
     <table class="table table-hover !important">
       <thead>
         <tr>
-          <th scope="col">id</th>
           <th scope="col">Nombre</th>
           <th scope="col">Fecha de actualización</th>
         </tr>
@@ -23,7 +22,6 @@
 
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <th>{{$cargo->id}}</th>
           <td>{{$cargo->nombre}}</td>
           <td>{{$cargo->updated_at}}</td>
         </tr>

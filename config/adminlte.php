@@ -343,12 +343,12 @@ return [
                 [
                     'text' => 'Consultar',
                     'icon'    => 'fas fa-search',
-                    'url'  => '#',
+                    'url'  => 'admin/especialista/index',
                 ],
                 [
                     'text'    => 'Registrar',
                     'icon'    => 'fas fa-save',
-                    'url'     => '#',
+                    'url'     => 'admin/especialista/create',
                 ],
                         
             ],
@@ -485,7 +485,7 @@ return [
             ],
         ],
 
-
+/*
 
         [
             'text'    => 'Teléfonos',
@@ -505,7 +505,7 @@ return [
             ],
         ],
 
-
+*/
         
         ////////////////////////////////////////////////
         ['header' => 'Módulos de Gerencias'],
@@ -529,6 +529,23 @@ return [
             ],
         ],
 
+        [
+            'text'    => 'Solicitantes (Funcionales)',
+            'icon'    => 'fas fa-users',
+            'submenu' => [
+                [
+                    'text' => 'Consultar',
+                    'icon'    => 'fas fa-search',
+                    'url'  => 'admin/solicitante/index',
+                ],
+                [
+                    'text'    => 'Registrar',
+                    'icon'    => 'fas fa-save',
+                    'url'     => 'admin/solicitante/create',
+                ],
+                        
+            ],
+        ],
 
         
         [
@@ -549,23 +566,7 @@ return [
             ],
         ],
 
-        [
-            'text'    => 'Solicitantes (Funcionales)',
-            'icon'    => 'fas fa-users',
-            'submenu' => [
-                [
-                    'text' => 'Consultar',
-                    'icon'    => 'fas fa-search',
-                    'url'  => 'admin/solicitante/index',
-                ],
-                [
-                    'text'    => 'Registrar',
-                    'icon'    => 'fas fa-save',
-                    'url'     => 'admin/solicitante/create',
-                ],
-                        
-            ],
-        ],
+        
 
         
 

@@ -15,15 +15,25 @@
     <label for="gerencia" class="form-label">Gerencia</label>
     <input name="gerencia" type="text" class="form-control" id="gerencia" placeholder="Escribe solo el nombre de gerencia" required>
   </div>
+
+  <label for="gerencia_linea" class="form-label">Vicepresidencia</label>
+  <select class="form-select form-select-sm col-md-3" name="gerencia_linea" id="gerencia_linea" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una Vicepresidencia</option>
+    <option value="Servicios">Servicios</option>
+    <option value="Procesos y Tecnología">Procesos y Tecnología</option>
+    <option value="Negocios">Negocios</option>
+    <option value="Tesorería y Finanzas">Tesorería y Finanzas</option>
+    <option value="Junta Directiva">Junta Directiva</option>
+    <option value="Presidencia">Presidencia</option>
+    <option value="Administración">Administración</option>
+    <option value="Infraestructura">Infraestructura</option>
+  </select>
+   
   <div class="col-md-3">
-    <label for="gerencia_linea" class="form-label">Gerencia de Línea</label>
-    <input name="gerencia_linea" type="text" class="form-control" id="gerencia_linea" placeholder="Escribe a qué área está adscrita" required>
-  </div>
-  
-    <div class="col-md-3">
-        <label for="floatingTextarea2">Descripción</label>
-        <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe" required>
-    </div>
+    <label for="floatingTextarea2">Descripción</label>
+    <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe" required>
+</div>
+
   <div class="col-12">
     <a href="{{route('gerencia.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>

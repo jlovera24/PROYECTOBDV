@@ -44,9 +44,8 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">id</th>
           <th scope="col">Gerencia</th>
-          <th scope="col">Gerencia de Línea</th>
+          <th scope="col">Vicepresidencia</th>
           <th scope="col">Descripción</th>
           <th scope="col">Fecha de actualización</th>
           <th scope="col-2">Modificar</th>
@@ -59,7 +58,6 @@
    
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <th>{{$item->id}}</th>
           <td>{{$item->gerencia}}</td>
           <td>{{$item->gerencia_linea}}</td>
           <td>{{$item->descripcion}}</td>

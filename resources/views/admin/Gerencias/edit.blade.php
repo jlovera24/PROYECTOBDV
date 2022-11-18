@@ -21,11 +21,20 @@
     <label for="gerencia" class="form-label">Gerencia</label>
     <input name="gerencia" type="text" class="form-control" id="gerencia" placeholder="Escribe solo el nombre de gerencia" required value="{{$gerencia->gerencia}}">
   </div>
-  <div class="col-md-3">
-    <label for="gerencia_linea" class="form-label">Gerencia de Línea</label>
-    <input name="gerencia_linea" type="text" class="form-control" id="gerencia_linea" placeholder="Escribe a qué área está adscrita" required value="{{$gerencia->gerencia_linea}}">
-  </div>
+
   
+  <select class="form-select form-select-sm" name="gerencia_linea" id="gerencia_linea" required>
+    <option value="{{$gerencia->gerencia_linea}}" selected>{{$gerencia->gerencia_linea}}</option>
+    <option value="Servicios">Servicios</option>
+    <option value="Procesos y Tecnología">Procesos y Tecnología</option>
+    <option value="Negocios">Negocios</option>
+    <option value="Tesorería y Finanzas">Tesorería y Finanzas</option>
+    <option value="Junta Directiva">Junta Directiva</option>
+    <option value="Presidencia">Presidencia</option>
+    <option value="Administración">Administración</option>
+    <option value="Infraestructura">Infraestructura</option>
+  </select>
+    
     <div class="col-md-3">
         <label for="floatingTextarea2">Descripción</label>
         <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe" required value="{{$gerencia->descripcion}}">
