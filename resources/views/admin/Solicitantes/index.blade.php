@@ -9,11 +9,7 @@
 @section('content')
     <p>Bienvenido</p>
 
-    
-
-@php
-print_r($users);
-@endphp
+   
     
 
     <p>
@@ -38,7 +34,7 @@ print_r($users);
           </div> 
         @endif
 
-   <!-- <div class="row">
+   {{-- <!-- <div class="row">
       <div class="col-sm-12">
         @if ($eliminado = Session::get('success'))
           <div class="alert alert-success" role="alert">
@@ -46,7 +42,7 @@ print_r($users);
           </div> 
         @endif   --> 
       
-  
+   --}}
 
     </div>
 
@@ -64,6 +60,8 @@ print_r($users);
       </thead>
       <tbody>
 
+  
+
 
       @foreach ($solicitante as $item)
       
@@ -73,7 +71,12 @@ print_r($users);
           <td>{{$item->nombres}}</td>
           <td>{{$item->apellido}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$users}}</td>
+          @foreach ($gerencia as $gerencias)
+              @if ($item->bl_gerencias_id == $gerencias->id)
+              <td>{{$gerencias->gerencia}}</td>
+              @endif
+          @endforeach
+          {{-- <td>{{$item->gerencia->gerencia}}</td> --}}
           <td>{{$item->updated_at}}</td>
 
 

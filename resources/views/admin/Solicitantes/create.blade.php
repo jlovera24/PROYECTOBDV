@@ -12,7 +12,7 @@
     
 
     <form class="row g-3" action="{{route('solicitante.store')}}" method="POST">
-        @csrf
+        {{ @csrf_token() }}
   <div class="col-md-3">
     <label for="nombres" class="form-label">Nombres</label>
     <input name="nombres" type="text" class="form-control" id="nombres" placeholder="Escribe uno o dos nombres" required>

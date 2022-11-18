@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Models\Solicitante;
 use App\Models\Gerencia;
 use Illuminate\Http\Request;
@@ -12,16 +14,14 @@ class SolicitanteController extends Controller
     //
     public function index()
     {
-
+//Investigar helpers dd
         $solicitante = Solicitante::all();
+        $gerencia = Gerencia::all();
+        return view('admin.Solicitantes.index', compact('solicitante', 'gerencia'));
 
-    $users = DB::table('bl_gerencias')
-->join('bl_solicitantes', 'bl_gerencias.id', '=', 'bl_solicitantes.bl_gerencias_id')->get('gerencia');
-
-            $gerencia = Gerencia::all();
-        return view('admin.Solicitantes.index', compact('solicitante', 'users', 'gerencia'));
-
-
+    // $users = DB::table('bl_gerencias')
+    // ->join('bl_solicitantes', 'bl_gerencias.id', '=', 'bl_solicitantes.bl_gerencias_id')
+    // ->get('gerencia');
 
         /*return view('admin.Solicitantes.index', compact('solicitante', 'all'));*/
 
