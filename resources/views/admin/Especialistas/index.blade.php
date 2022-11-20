@@ -11,18 +11,16 @@
    
 
     <p>
-      <a href="{{route("solicitante.create") }}" class="btn btn-primary"> 
+      <a href="{{route("especialista.create") }}" class="btn btn-primary"> 
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-workspace" viewBox="0 0 16 16">
           <path d="M4 16s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H4Zm4-5.95a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
           <path d="M2 1a2 2 0 0 0-2 2v9.5A1.5 1.5 0 0 0 1.5 14h.653a5.373 5.373 0 0 1 1.066-2H1V3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v9h-2.219c.554.654.89 1.373 1.066 2h.653a1.5 1.5 0 0 0 1.5-1.5V3a2 2 0 0 0-2-2H2Z"/>
-        </svg> Agregar nuevo solicitante</a>
+        </svg> Agregar nuevo Especialista</a>
     </p>
 
         
     
-  <!--   @php
-        print_r($solicitante);
-    @endphp -->
+ 
 
     <div class="row">
       <div class="col-sm-12">
@@ -55,40 +53,20 @@
           <th scope="col">Fecha de Ingreso a la Institución</th>
           <th scope="col">Fecha de Ingreso al Departamento</th>
           <th scope="col">Correo Corporativo</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Operadora</th>
-          <th scope="col">Dirección Resumida</th>
-          <th scope="col">Ciudad</th>
-          <th scope="col">Estado</th>
-          <th scope="col">Parroquia</th>
-          <th scope="col">Municipio</th>
-          <th scope="col">Gerencia</th>
+
+          
+      
+          
           <th scope="col">Cargo</th>
-          <th scope="col">Ubicación Física</th>
           <th scope="col">Gerencia</th>
+          <th scope="col">Ubicación Física</th>
+          <th scope="col">Fecha de Actualización</th>
 
           <th scope="col-2">Modificar</th>
           <th scope="col-2">Eliminar</th>
 
-
-          $especialista->nombres = $request->post('nombres');
-          $especialista->apellido = $request->post('apellido');
-          $especialista->cedula = $request->post('cedula');
-          $especialista->fec_naci = $request->post('fec_naci');
-          $especialista->nm_ct = $request->post('nm_ct');
-          $especialista->fec_ing = $request->post('fec_ing');
-          $especialista->fec_ing_dpto = $request->post('fec_ing_dpto');
-          $especialista->email = $request->post('email');
-          $telefono->telefono = $request->post('telefono');
-          $telefono->operadora = $request->post('operadora');
-          $direccion->descripcion = $request->post('descripcion');
-          $direccion->ciudades_id = $request->post('ciudades_id');
-          $direccion->estados_id = $request->post('estados_id');
-          $direccion->parroquias_id = $request->post('parroquias_id');
-          $direccion->municipios_id = $request->post('municipios_id');
-          $especialista->bl_cargos_id = $request->post('bl_cargos_id');
-          $especialista->bl_ubicaciones_id = $request->post('bl_ubicaciones_id');
-          $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
+            
+          
 
 
         </tr>
@@ -102,18 +80,35 @@
         <tr>
         <!--  <th scope="row">1</th>  -->
           <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->apellido}}</td>
+          <td>{{$item->apellidos}}</td>
+          <td>{{$item->cedula}}</td>
+          <td>{{$item->fech_nacimiento}}</td>
+          <td>{{$item->nm_ct}}</td>
+          <td>{{$item->fec_ing}}</td>
+          <td>{{$item->fec_ing_dpto}}</td>
           <td>{{$item->email}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
-          <td>{{$item->nombres}}</td>
+
+          @foreach ($cargo as $carg)
+              @if ($item->bl_cargos_id == $carg->id)
+              <td>{{$carg->nombre}}</td>
+              @endif
+          @endforeach
+
+          @foreach ($gerencia as $geren)
+              @if ($item->bl_gerencias_id == $geren->id)
+              <td>{{$geren->gerencia}}</td>
+              @endif
+          @endforeach
+
+          @foreach ($ubicacion_fisica as $ubi)
+              @if ($item->bl_ubicaciones_fisicas_id == $ubi->id)
+              <td>{{$ubi->ubicacion_fisica}}</td>
+              @endif
+          @endforeach
+
           <td>{{$item->updated_at}}</td>
+
+
 
 
           <td>

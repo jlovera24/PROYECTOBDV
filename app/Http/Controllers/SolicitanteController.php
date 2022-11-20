@@ -41,6 +41,7 @@ class SolicitanteController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $solicitante = new Solicitante();
+        $gerencia = Gerencia::all();
         $solicitante->nombres = $request->post('nombres');
         $solicitante->apellido = $request->post('apellido');
         $solicitante->email = $request->post('email');

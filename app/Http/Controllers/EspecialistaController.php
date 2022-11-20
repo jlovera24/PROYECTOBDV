@@ -33,17 +33,25 @@ class EspecialistaController extends Controller
 
         /*$gerencia = Gerencia::pluck('nombre','id');*/
         $especialista = Especialista::all();
-        return view('admin.Especialistas.create', compact('especialista'));
+        $cargo = Cargo::all();
+        $gerencia = Gerencia::all();
+        $ubicacion_fisica = Ubicacion_Fisica::all();
+
+        return view('admin.Especialistas.create', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica'));
     }
 
     public function store(Request $request)
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $especialista = new Especialista();
+        $cargo = new Cargo();
+        $gerencia = new Gerencia();
+        $ubicacion_fisica = new Ubicacion_Fisica();
         $telefono = new Telefono();
         $direccion = new Direccion();
+
         $especialista->nombres = $request->post('nombres');
-        $especialista->apellido = $request->post('apellido');
+        $especialista->apellido = $request->post('apellidos');
         $especialista->cedula = $request->post('cedula');
         $especialista->fec_naci = $request->post('fec_naci');
         $especialista->nm_ct = $request->post('nm_ct');
@@ -63,6 +71,34 @@ class EspecialistaController extends Controller
         $especialista->save(); 
         $telefono->save();
         $direccion->save();
+
+
+        <div class="col-md-4">
+        <label for="nombres" class="form-label">Nombres</label>
+    v class="col-md-4">
+        <label for="apellidos" class="form-label">Apellidos</label>
+    ="col-md-2">
+        <label for="cedula" class="form-label">Cédula de Identidad</label>
+    2">
+        <label for="fech_nacimiento" class="form-label">Fecha de Nacimiento</label>
+    ss="col-md-3">
+        <label for="nm_ct" class="form-label">NM o CT de usuario</label>
+    d-3">
+        <label for="fec_ing" class="form-label">Fecha Ingreso Institución</label>
+     <label for="fec_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
+    ss="col-md-3">
+        <label for="email" class="form-label">Correo Corporativo</label>
+    div class="col-md-2">
+      <label for="bl_cargos_id" class="form-label">Cargo:</label>
+    ass="col-md-2">
+      <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
+    <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
+    col-md-3">
+      <label for="operadora" class="form-label">Operadora Telefónica</label>
+    "col-md-3">
+        <label for="telefono" class="form-label">Número de Teléfono</label>
+    class="col-md-3">
+        <label for="descripcion" class="form-label">Dirección</label>
 
         return redirect()->route("especialista.index")->with("success", "¡Registro agregado exitosamente!");
     }
