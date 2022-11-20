@@ -100,14 +100,7 @@ class EspecialistaController extends Controller
         return view("admin.Especialistas.edit", compact('especialista'));
         
     }
-    public function edi($id)
-    {
-        //$ubicacion_fisica = Gerencia::all();
-        $cargo = new Cargo();
-        $especialista = Especialista::find($id);
-        return view("admin.Especialistas.edit", compact('especialista'));
-        
-    }
+    
    
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
