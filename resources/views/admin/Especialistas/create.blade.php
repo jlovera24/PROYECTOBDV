@@ -11,20 +11,19 @@
 
     
 
-    <form class="row g-3" action="{{route('solicitante.store')}}" method="POST">
+  <form class="row g-3" action="{{route('especialista.store')}}" method="POST">
         @csrf
-
-
-
 
   <div class="col-md-4">
     <label for="nombres" class="form-label">Nombres</label>
     <input name="nombres" type="text" class="form-control" id="nombres" placeholder="Escribe uno o dos nombres" required>
   </div>
+
   <div class="col-md-4">
     <label for="apellidos" class="form-label">Apellidos</label>
-    <input name="apellidos" type="text" class="form-control" id="s" placeholder="Escribe el primer apellido" required>
+    <input name="apellidos" type="text" class="form-control" id="apellidos" placeholder="Escribe uno o dos nombres" required>
   </div>
+
   <div class="col-md-2">
     <label for="cedula" class="form-label">Cédula de Identidad</label>
     <input name="cedula" type="text" class="form-control" id="cedula" placeholder="Escribe solo correos corporativos" required>
@@ -57,7 +56,7 @@
 
 
 
-<div class="col-md-2">
+<div class="col-md-4">
   <label for="bl_cargos_id" class="form-label">Cargo:</label>
   <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id">
 
@@ -68,7 +67,7 @@
   </select>
 </div>
 
-<div class="col-md-2">
+<div class="col-md-4">
   <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
   <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
 
@@ -79,7 +78,7 @@
   </select>
 </div>
 
-<div class="col-md-6">
+<div class="col-md-5">
   <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
   <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id">
 
@@ -91,10 +90,17 @@
 </div>
 
 
-<div class="col-md-3">
-  <label for="operadora" class="form-label">Operadora Telefónica</label>
-  <input name="operadora" type="text" class="form-control" id="operadora" placeholder="Escribe uno o dos nombres" required>
-</div>
+<label for="operadora" class="form-label">Vicepresidencia</label>
+  <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una Operadora</option>
+    <option value="0412">0412</option>
+    <option value="0424">0424</option>
+    <option value="0414">0414</option>
+    <option value="0426">0426</option>
+    <option value="0416">0416</option>
+    <option value="0212">0212</option>
+
+  </select>
 
   <div class="col-md-3">
     <label for="telefono" class="form-label">Número de Teléfono</label>
@@ -104,7 +110,7 @@
 
   <div class="col-md-3">
     <label for="descripcion" class="form-label">Dirección</label>
-    <input name="descripcion de dirección" type="text" class="form-control" id="operadora" placeholder="Escribe uno o dos nombres" required>
+    <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required>
   </div>
  
   
@@ -126,7 +132,7 @@ Botones Regresar y Guardar
 --}}
 
   <div class="col-12">
-    <a href="{{route('solicitante.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+    <a href="{{route('especialista.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
       </svg> Regresar</a>
 

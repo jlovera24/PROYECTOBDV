@@ -46,27 +46,14 @@
       <thead>
         <tr>
           <th scope="col">Nombres</th>
-          <th scope="col">Apellido</th>
-          <th scope="col">Cédula de Identidad</th>
-          <th scope="col">Fecha de Nacimiento</th>
+          <th scope="col">Apellidos</th>
           <th scope="col">Idenficador NM o CT</th>
-          <th scope="col">Fecha de Ingreso a la Institución</th>
-          <th scope="col">Fecha de Ingreso al Departamento</th>
-          <th scope="col">Correo Corporativo</th>
-
-          
-      
-          
+          <th scope="col">Correo Corporativo</th>       
           <th scope="col">Cargo</th>
           <th scope="col">Gerencia</th>
-          <th scope="col">Ubicación Física</th>
-          <th scope="col">Fecha de Actualización</th>
 
           <th scope="col-2">Modificar</th>
           <th scope="col-2">Eliminar</th>
-
-            
-          
 
 
         </tr>
@@ -81,11 +68,7 @@
         <!--  <th scope="row">1</th>  -->
           <td>{{$item->nombres}}</td>
           <td>{{$item->apellidos}}</td>
-          <td>{{$item->cedula}}</td>
-          <td>{{$item->fech_nacimiento}}</td>
           <td>{{$item->nm_ct}}</td>
-          <td>{{$item->fec_ing}}</td>
-          <td>{{$item->fec_ing_dpto}}</td>
           <td>{{$item->email}}</td>
 
           @foreach ($cargo as $carg)
@@ -100,19 +83,9 @@
               @endif
           @endforeach
 
-          @foreach ($ubicacion_fisica as $ubi)
-              @if ($item->bl_ubicaciones_fisicas_id == $ubi->id)
-              <td>{{$ubi->ubicacion_fisica}}</td>
-              @endif
-          @endforeach
-
-          <td>{{$item->updated_at}}</td>
-
-
-
 
           <td>
-            <form action="{{route("solicitante.edit", $item->id)}}" method="GET">
+            <form action="{{route("especialista.edit", $item->id)}}" method="GET">
               <button class="btn btn-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -124,7 +97,7 @@
 
 
           <td>
-            <form action="{{route("solicitante.show", $item->id)}}" method="GET">
+            <form action="{{route("especialista.show", $item->id)}}" method="GET">
               <button class="btn btn-danger">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                   <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>

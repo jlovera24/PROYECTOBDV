@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Direccion extends Model
 {
     //use HasFactory;
+    protected $table = 'bl_direcciones';
     public function ciudad()
     {
         return $this->belongsTo(Ciudad::class);

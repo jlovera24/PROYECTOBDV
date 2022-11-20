@@ -78,7 +78,7 @@ Route::get('admin/especialista/index', [App\Http\Controllers\EspecialistaControl
 Route::get('admin/especialista/create', [App\Http\Controllers\EspecialistaController::class, 'create'])->name('especialista.create');
 Route::get('admin/especialista/show/{id}', [App\Http\Controllers\EspecialistaController::class, 'show'])->name('especialista.show');
 Route::post('admin/especialista/store', [App\Http\Controllers\EspecialistaController::class, 'store'])->name('especialista.store');
-Route::get('admin/especialista/edit/{id}', [App\Http\Controllers\EspecialistaController::class, 'edit'])->name('especialista.edit');
+Route::get('admin/especialista/edit/{id}', [App\Http\Controllers\EspecialistaController::class, 'edit', 'edi'])->name('especialista.edit');
 Route::put('admin/especialista/update/{id}', [App\Http\Controllers\EspecialistaController::class, 'update'])->name('especialista.update');
 Route::delete('admin/especialista/destroy/{id}', [App\Http\Controllers\EspecialistaController::class, 'destroy'])->name('especialista.destroy');
 

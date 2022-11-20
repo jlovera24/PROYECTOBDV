@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Telefono extends Model
 {
     //use HasFactory;
+    protected $table = 'bl_telefonos';
+
     public function especialistas()
     {
         return $this->belongsToMany(Especialista::class);
