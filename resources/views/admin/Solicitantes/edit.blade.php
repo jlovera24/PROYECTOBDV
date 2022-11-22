@@ -30,9 +30,14 @@
           <label for="email" class="form-label">Correo Corporativo</label>
           <input name="email" type="text" class="form-control" id="email" placeholder="Escribe solo correos corporativos" required value="{{$solicitante->email}}">
         </div>
-        <div class="col-md-3">
-          <label for="bl_gerencias_id" class="form-label">ID Gerencia</label>
-          <input name="bl_gerencias_id" type="text" class="form-control" id="bl_gerencias_id" placeholder="Escribe el ID de gerencia" required value="{{$solicitante->bl_gerencias_id}}">
+        <div>
+          <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
+        
+            @foreach ($gerencia as $item)
+            <option value="{{$item->id}}">{{$item->gerencia}}</option>
+            @endforeach
+            
+          </select>
         </div>
 
         

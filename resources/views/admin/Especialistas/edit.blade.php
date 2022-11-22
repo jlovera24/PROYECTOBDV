@@ -10,7 +10,7 @@
     <p>Bienvenido</p>
 
 
-    <form class="row g-3" action="{{route('especialista.update', $especialista->id)}}" method="POST">
+    <form class="row g-3" action="{{route('especialista.update', $especialista->id, $direccion->id)}}" method="POST">
         @csrf
         @method("PUT")
 
@@ -62,7 +62,7 @@
       
         <div class="col-md-4">
           <label for="bl_cargos_id" class="form-label">Cargo:</label>
-          <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id" value="{{$cargo->nombre}}">
+          <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id" >
         
             @foreach ($cargo as $carg)
             <option value="{{$carg->id}}">{{$carg->nombre}}</option>
@@ -73,7 +73,7 @@
         
         <div class="col-md-4">
           <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
-          <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id" value="{{$gerencia->gerencia}}">
+          <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id" >
         
             @foreach ($gerencia as $geren)
             <option value="{{$geren->id}}">{{$geren->gerencia}}</option>
@@ -84,7 +84,7 @@
         
         <div class="col-md-5">
           <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
-          <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id" value="{{$ubicacion->ubicacion_fisica}}">
+          <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id" >
         
             @foreach ($ubicacion_fisica as $ubi)
             <option value="{{$ubi->id}}">{{$ubi->ubicacion_fisica}}</option>
@@ -94,9 +94,9 @@
         </div>
         
         
-        <label for="operadora" class="form-label">Vicepresidencia</label>
+        <label for="operadora" class="form-label">Operadora telefónica</label>
           <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required value="{{$telefono->operadora}}">
-            <option value="" selected disabled>Seleccione una Operadora</option>
+  
             <option value="0412">0412</option>
             <option value="0424">0424</option>
             <option value="0414">0414</option>
@@ -114,7 +114,7 @@
         
           <div class="col-md-3">
             <label for="descripcion" class="form-label">Dirección</label>
-            <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required value="{{$direccion->descripcion}}">
+            <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required value="{{$direccion->descripcion}}" >
           </div>
   
 

@@ -69,7 +69,6 @@ Route::get('admin/solicitante/create', [App\Http\Controllers\SolicitanteControll
 Route::get('admin/solicitante/show/{id}', [App\Http\Controllers\SolicitanteController::class, 'show'])->name('solicitante.show');
 Route::post('admin/solicitante/store', [App\Http\Controllers\SolicitanteController::class, 'store'])->name('solicitante.store');
 Route::get('admin/solicitante/edit/{id}', [App\Http\Controllers\SolicitanteController::class, 'edit'])->name('solicitante.edit');
-Route::get('admin/solicitante/enviar', [App\Http\Controllers\SolicitanteController::class, 'enviar'])->name('solicitante.enviar');
 Route::put('admin/solicitante/update/{id}', [App\Http\Controllers\SolicitanteController::class, 'update'])->name('solicitante.update');
 Route::delete('admin/solicitante/destroy/{id}', [App\Http\Controllers\SolicitanteController::class, 'destroy'])->name('solicitante.destroy');
 

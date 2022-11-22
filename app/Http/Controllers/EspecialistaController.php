@@ -23,7 +23,9 @@ class EspecialistaController extends Controller
         $cargo = Cargo::all();
         $gerencia = Gerencia::all();
         $ubicacion_fisica = Ubicacion_Fisica::all();
-        return view('admin.Especialistas.index', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica'));
+        $telefono = Telefono::all();
+        $direccion = Direccion::all();
+        return view('admin.Especialistas.index', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica', 'telefono', 'direccion'));
         /*return view('admin.Solicitantes.index', compact('solicitante', 'all'));*/
 
         
@@ -95,9 +97,16 @@ class EspecialistaController extends Controller
     public function edit($id)
     {
         //$ubicacion_fisica = Gerencia::all();
-        $cargo = new Cargo();
+        
         $especialista = Especialista::find($id);
-        return view("admin.Especialistas.edit", compact('especialista'));
+        $cargo = Cargo::all();
+        $gerencia = Gerencia::all();
+        $ubicacion_fisica = Ubicacion_Fisica::all();
+
+        $direccion = Direccion::find($id);
+        $telefono = Telefono::find($id);
+
+        return view("admin.Especialistas.edit", compact('especialista', 'direccion', 'telefono', 'cargo', 'gerencia', 'ubicacion_fisica'));
         
     }
     

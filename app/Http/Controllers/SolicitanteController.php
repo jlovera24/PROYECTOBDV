@@ -63,7 +63,8 @@ class SolicitanteController extends Controller
     {
         //$ubicacion_fisica = Gerencia::all();
         $solicitante = Solicitante::find($id);
-        return view("admin.Solicitantes.edit", compact('solicitante'));
+        $gerencia = Gerencia::all();
+        return view("admin.Solicitantes.edit", compact('solicitante', 'gerencia'));
         
     }
 
