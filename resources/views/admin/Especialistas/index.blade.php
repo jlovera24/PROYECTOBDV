@@ -51,9 +51,9 @@
           <th scope="col">Correo Corporativo</th>       
           <th scope="col">Cargo</th>
           <th scope="col">Gerencia</th>
+          <th scope="col">Operadora</th>
           <th scope="col">Teléfono</th>
           <th scope="col">Dirección</th>
-
           <th scope="col-2">Modificar</th>
           <th scope="col-2">Eliminar</th>
 
@@ -83,6 +83,12 @@
               @if ($item->bl_gerencias_id == $geren->id)
               <td>{{$geren->gerencia}}</td>
               @endif
+          @endforeach
+
+          @foreach ($telefono as $telf)
+            @if ($item->id == $telf->id)
+            <td>{{$telf->operadora}}</td>
+            @endif
           @endforeach
 
           @foreach ($telefono as $telf)

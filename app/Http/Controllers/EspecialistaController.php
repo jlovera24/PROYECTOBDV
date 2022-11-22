@@ -79,6 +79,10 @@ class EspecialistaController extends Controller
         $telefono->save();
         $direccion->save();
 
+        $especialista->telefonos()->attach('Aquí id task', 'status'=>true]);
+        $especialista->telefonos()->attach($request->get('telefonos'));
+        $especialista->direcciones()->attach($request->get('direcciones'));
+
         return redirect()->route("especialista.index")->with("success", "¡Registro agregado exitosamente!");
     }
 
