@@ -69,6 +69,7 @@ class EspecialistaController extends Controller
         $especialista->bl_cargos_id = $request->post('bl_cargos_id');
         $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
         $especialista->bl_ubicaciones_fisicas_id = $request->post('bl_ubicaciones_fisicas_id');
+        
 
         $telefono->operadora = $request->post('operadora');
         $telefono->telefono = $request->post('telefono');
@@ -77,11 +78,15 @@ class EspecialistaController extends Controller
 
         $especialista->save(); 
         $telefono->save();
-        $direccion->save();
+        //$especialista->telefonos()->attach('bl_telefonos_id->id',['bl_especialistas_id'=>'bl_especialistas_id']);
+        $especialista->telefonos()->attach($telefono->id);
 
-        $especialista->telefonos()->attach('Aquí id task', 'status'=>true]);
-        $especialista->telefonos()->attach($request->get('telefonos'));
-        $especialista->direcciones()->attach($request->get('direcciones'));
+        $direccion->save();
+        
+        
+//$espe= Especialista();
+//dd($espe)->telefonos()->attach('id',['bl_especialistas_id'=>'id']);
+        
 
         return redirect()->route("especialista.index")->with("success", "¡Registro agregado exitosamente!");
     }
