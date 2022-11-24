@@ -27,7 +27,7 @@ class EspecialistaController extends Controller
         $direccion = Direccion::all();
         return view('admin.Especialistas.index', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica', 'telefono', 'direccion'));
         /*return view('admin.Solicitantes.index', compact('solicitante', 'all'));*/
-
+        $especialista->telefonos()->attach($telefono->id);
         
     }
 
