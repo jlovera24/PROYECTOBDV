@@ -51,10 +51,7 @@
           <th scope="col">Correo Corporativo</th>       
           <th scope="col">Cargo</th>
           <th scope="col">Gerencia</th>
-          <th scope="col">Operadora</th>
-          <th scope="col">Teléfono</th>
-          <th scope="col">Dirección</th>
-          <th scope="col-2">Modificar</th>
+          <th scope="col-2">Modificar</th> 
           <th scope="col-2">Eliminar</th>
 
 
@@ -73,6 +70,7 @@
           <td>{{$item->nm_ct}}</td>
           <td>{{$item->email}}</td>
 
+
           @foreach ($cargo as $carg)
               @if ($item->bl_cargos_id == $carg->id)
               <td>{{$carg->nombre}}</td>
@@ -85,24 +83,25 @@
               @endif
           @endforeach
 
+          {{--
           @foreach ($telefono as $telf)
-            @if ($item->id == $telf->id)
+            @if ($item->bl_telefonos_id == $telf->id)
             <td>{{$telf->operadora}}</td>
             @endif
-          @endforeach
+          @endforeach     
 
           @foreach ($telefono as $telf)
-              @if ($item->id == $telf->id)
-              <td>{{$telf->telefono}}</td>
+              @if ($item->bl_telefonos_id == $telf->id)
+              <td>{{$telf->numero}}</td>
               @endif
           @endforeach
 
           @foreach ($direccion as $dir)
-              @if ($item->id == $dir->id)
+              @if ($item->id == $dir->bl_especialistas_id)
               <td>{{$dir->descripcion}}</td>
               @endif
           @endforeach
-
+ --}}
 
           <td>
             <form action="{{route("especialista.edit", $item->id)}}" method="GET">

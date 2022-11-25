@@ -16,8 +16,8 @@
     <input name="gerencia" type="text" class="form-control" id="gerencia" placeholder="Escribe solo el nombre de gerencia" required>
   </div>
 
-  <label for="gerencia_linea" class="form-label">Vicepresidencia</label>
-  <select class="form-select form-select-sm col-md-3" name="gerencia_linea" id="gerencia_linea" aria-placeholder="Seleccione una Opción" required>
+  <label for="vicepresidencia" class="form-label">Vicepresidencia</label>
+  <select class="form-select form-select-sm col-md-3" name="vicepresidencia" id="vicepresidencia" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione una Vicepresidencia</option>
     <option value="Servicios">Servicios</option>
     <option value="Procesos y Tecnología">Procesos y Tecnología</option>

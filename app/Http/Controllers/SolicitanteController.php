@@ -41,8 +41,7 @@ class SolicitanteController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $solicitante = new Solicitante();
-        $gerencia = Gerencia::all();
-        $solicitante->nombres = $request->post('nombres');
+        $solicitante->nombre = $request->post('nombre');
         $solicitante->apellido = $request->post('apellido');
         $solicitante->email = $request->post('email');
         $solicitante->bl_gerencias_id = $request->post('bl_gerencias_id');
@@ -72,7 +71,7 @@ class SolicitanteController extends Controller
     {
         //$ubicacion_fisica = Ubicacion_Fisica::all();
         $solicitante = Solicitante::find($id);
-        $solicitante->nombres = $request->post('nombres');
+        $solicitante->nombre = $request->post('nombre');
         $solicitante->apellido = $request->post('apellido');
         $solicitante->email = $request->post('email');
         $solicitante->bl_gerencias_id = $request->post('bl_gerencias_id');

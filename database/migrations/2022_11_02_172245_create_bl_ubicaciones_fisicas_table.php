@@ -15,7 +15,7 @@ class CreateBlUbicacionesFisicasTable extends Migration
     {
         Schema::create('bl_ubicaciones_fisicas', function (Blueprint $table) {
             $table->id();
-            $table->string('ubicacion_fisica');
+            $table->string('piso');
             $table->string('descripcion');
             $table->timestamps();
         });

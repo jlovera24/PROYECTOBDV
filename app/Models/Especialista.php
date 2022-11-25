@@ -11,13 +11,12 @@ class Especialista extends Model
     protected $table = 'bl_especialistas';
     public function direcciones()
     {
-        return $this->belongsToMany(Direccion::class)
-        ->withPivot('menu_id','status');    
+        return $this->hasMany(Direccion::class);    
     }
 
     public function telefonos()
     {
-        return $this->belongsToMany(Telefono::class);
+        return $this->belongsTo(Telefono::class);
     }
 
     public function cargo()
@@ -37,7 +36,7 @@ class Especialista extends Model
     
     public function solicitudes()
     {
-        return $this->belongsToMany(Solicitud::class);
+        return $this->hasMany(Solicitud::class);
     }
 
     public function equipos()

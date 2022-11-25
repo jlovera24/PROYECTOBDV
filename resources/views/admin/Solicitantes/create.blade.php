@@ -12,8 +12,8 @@
     <form class="row g-3" action="{{route('solicitante.store')}}" method="POST">
       @csrf
   <div class="col-md-3">
-    <label for="nombres" class="form-label">Nombres</label>
-    <input name="nombres" type="text" class="form-control" id="nombres" placeholder="Escribe uno o dos nombres" required>
+    <label for="nombre" class="form-label">Nombres</label>
+    <input name="nombre" type="text" class="form-control" id="nombre" placeholder="Escribe uno o dos nombres" required>
   </div>
   <div class="col-md-3">
     <label for="apellido" class="form-label">Apellido</label>

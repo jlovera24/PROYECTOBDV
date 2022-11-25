@@ -14,7 +14,7 @@
     <table class="table table-hover !important">
       <thead>
         <tr>
-          <th scope="col">Nombres</th>
+          <th scope="col">Nombre</th>
           <th scope="col">Apellido</th>
           <th scope="col">Email</th>
           <th scope="col">ID Gerencia</th>
@@ -25,7 +25,7 @@
 
         <tr>
         <!--  <th scope="row">1</th>  -->
-        <td>{{$solicitante->nombres}}</td>
+        <td>{{$solicitante->nombre}}</td>
         <td>{{$solicitante->apellido}}</td>
         <td>{{$solicitante->email}}</td>
         <td>{{$solicitante->bl_gerencias_id}}</td>

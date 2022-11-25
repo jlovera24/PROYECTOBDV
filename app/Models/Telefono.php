@@ -12,6 +12,6 @@ class Telefono extends Model
 
     public function especialistas()
     {
-        return $this->belongsToMany(Especialista::class);
+        return $this->hasMany(Especialista::class);
     }
 }

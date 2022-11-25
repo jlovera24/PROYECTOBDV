@@ -24,7 +24,7 @@ class Ubicacion_FisicaController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $ubicacion_fisica = new Ubicacion_Fisica();
-        $ubicacion_fisica->ubicacion_fisica = $request->post('ubicacion_fisica');
+        $ubicacion_fisica->piso = $request->post('piso');
         $ubicacion_fisica->descripcion = $request->post('descripcion');
         $ubicacion_fisica->save();
 
@@ -50,7 +50,7 @@ class Ubicacion_FisicaController extends Controller
     {
         //$ubicacion_fisica = Ubicacion_Fisica::all();
         $ubicacion_fisica = Ubicacion_Fisica::find($id);
-        $ubicacion_fisica->ubicacion_fisica = $request->post('ubicacion_fisica');
+        $ubicacion_fisica->piso = $request->post('piso');
         $ubicacion_fisica->descripcion = $request->post('descripcion');
         $ubicacion_fisica->save();
 

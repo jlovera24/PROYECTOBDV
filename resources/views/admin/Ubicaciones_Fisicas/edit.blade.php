@@ -18,8 +18,8 @@
         @csrf
         @method("PUT")
   <div class="col-md-3">
-    <label for="ubicacion_fisica" class="form-label">Ubicación o Piso</label>
-    <input name="ubicacion_fisica" type="text" class="form-control" id="ubicacion_fisica" placeholder="Escribe solo el nombre de gerencia" required value="{{$ubicacion_fisica->ubicacion_fisica}}">
+    <label for="piso" class="form-label">Ubicación o Piso</label>
+    <input name="piso" type="text" class="form-control" id="piso" placeholder="Escribe solo el nombre de gerencia" required value="{{$ubicacion_fisica->piso}}">
   </div>
   <div class="col-md-3">
     <label for="descripcion" class="form-label">Descripción</label>

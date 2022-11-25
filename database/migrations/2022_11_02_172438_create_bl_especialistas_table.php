@@ -20,12 +20,13 @@ class CreateBlEspecialistasTable extends Migration
             $table->string('apellidos');
             $table->string('cedula');
             $table->date('fech_nacimiento');
-            $table->date('fec_ing');
-            $table->date('fec_ing_dpto');
+            $table->date('fecha_ing');
+            $table->date('fecha_ing_dpto');
             $table->string('email');         
             $table->unsignedBigInteger('bl_cargos_id');
             $table->unsignedBigInteger('bl_ubicaciones_fisicas_id');
             $table->unsignedBigInteger('bl_gerencias_id');
+            $table->unsignedBigInteger('bl_telefonos_id');
             $table->timestamps();
 
             $table->foreign('bl_cargos_id')->references('id')->on('bl_cargos')
@@ -37,6 +38,10 @@ class CreateBlEspecialistasTable extends Migration
             ->onDelete('cascade');
 
             $table->foreign('bl_gerencias_id')->references('id')->on('bl_gerencias')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('bl_telefonos_id')->references('id')->on('bl_telefonos')
             ->onUpdate('cascade')
             ->onDelete('cascade');
 

@@ -59,7 +59,7 @@
         <tr>
         <!--  <th scope="row">1</th>  -->
           <td>{{$item->gerencia}}</td>
-          <td>{{$item->gerencia_linea}}</td>
+          <td>{{$item->vicepresidencia}}</td>
           <td>{{$item->descripcion}}</td>
           <td>{{$item->updated_at}}</td>
 

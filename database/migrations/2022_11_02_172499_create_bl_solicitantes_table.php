@@ -15,7 +15,7 @@ class CreateBlSolicitantesTable extends Migration
     {
         Schema::create('bl_solicitantes', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres');
+            $table->string('nombre');
             $table->string('apellido');
             $table->string('email');
             $table->unsignedBigInteger('bl_gerencias_id');

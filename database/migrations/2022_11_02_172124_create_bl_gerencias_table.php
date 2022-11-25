@@ -16,7 +16,7 @@ class CreateBlGerenciasTable extends Migration
         Schema::create('bl_gerencias', function (Blueprint $table) {
             $table->id();
             $table->string('gerencia');
-            $table->string('gerencia_linea');
+            $table->string('vicepresidencia');
             $table->string('descripcion');
             $table->timestamps();
         });

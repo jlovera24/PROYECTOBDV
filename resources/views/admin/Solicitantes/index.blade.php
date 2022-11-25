@@ -68,7 +68,7 @@
    
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <td>{{$item->nombres}}</td>
+          <td>{{$item->nombre}}</td>
           <td>{{$item->apellido}}</td>
           <td>{{$item->email}}</td>
           @foreach ($gerencia as $gerencias)

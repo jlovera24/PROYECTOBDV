@@ -23,8 +23,8 @@
   </div>
 
   
-  <select class="form-select form-select-sm" name="gerencia_linea" id="gerencia_linea" required>
-    <option value="{{$gerencia->gerencia_linea}}" selected>{{$gerencia->gerencia_linea}}</option>
+  <select class="form-select form-select-sm" name="vicepresidencia" id="vicepresidencia" required>
+    <option value="{{$gerencia->vicepresidencia}}" selected>{{$gerencia->vicepresidencia}}</option>
     <option value="Servicios">Servicios</option>
     <option value="Procesos y Tecnología">Procesos y Tecnología</option>
     <option value="Negocios">Negocios</option>

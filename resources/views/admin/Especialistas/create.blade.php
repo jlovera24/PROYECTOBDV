@@ -40,13 +40,13 @@
     <input name="nm_ct" type="text" class="form-control" id="nm_ct" placeholder="Escribe el primer apellido" required>
   </div>
   <div class="col-md-3">
-    <label for="fec_ing" class="form-label">Fecha Ingreso Institución</label>
-    <input name="fec_ing" type="date" class="form-control" id="fec_ing" placeholder="Escribe solo correos corporativos" required>
+    <label for="fecha_ing" class="form-label">Fecha Ingreso Institución</label>
+    <input name="fecha_ing" type="date" class="form-control" id="fecha_ing" placeholder="Escribe solo correos corporativos" required>
   </div>
 
   <div class="col-md-3">
-    <label for="fec_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
-    <input name="fec_ing_dpto" type="date" class="form-control" id="fec_ing_dpto" placeholder="Escribe uno o dos nombres" required>
+    <label for="fecha_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
+    <input name="fecha_ing_dpto" type="date" class="form-control" id="fecha_ing_dpto" placeholder="Escribe uno o dos nombres" required>
   </div>
     
   <div class="col-md-3">
@@ -83,14 +83,14 @@
   <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id">
 
     @foreach ($ubicacion_fisica as $ubi)
-    <option value="{{$ubi->id}}">{{$ubi->ubicacion_fisica}}</option>
+    <option value="{{$ubi->id}}">{{$ubi->piso}}</option>
     @endforeach 
     
   </select>
 </div>
 
 
-<label for="operadora" class="form-label">Vicepresidencia</label>
+<label for="operadora" class="form-label">Operadora</label>
   <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione una Operadora</option>
     <option value="0412">0412</option>
@@ -103,8 +103,8 @@
   </select>
 
   <div class="col-md-3">
-    <label for="telefono" class="form-label">Número de Teléfono</label>
-    <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Escribe el primer apellido" required>
+    <label for="numero" class="form-label">Número de Teléfono</label>
+    <input name="numero" type="text" class="form-control" id="numero" placeholder="Escribe el primer apellido" required>
   </div>
 
 

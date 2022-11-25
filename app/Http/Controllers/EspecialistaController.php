@@ -27,7 +27,7 @@ class EspecialistaController extends Controller
         $direccion = Direccion::all();
         return view('admin.Especialistas.index', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica', 'telefono', 'direccion'));
         /*return view('admin.Solicitantes.index', compact('solicitante', 'all'));*/
-
+        $especialista->telefonos()->attach($telefono->id);
         
     }
 
@@ -42,8 +42,9 @@ class EspecialistaController extends Controller
         $cargo = Cargo::all();
         $gerencia = Gerencia::all();
         $ubicacion_fisica = Ubicacion_Fisica::all();
+        $direccion = Direccion::all();
 
-        return view('admin.Especialistas.create', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica'));
+        return view('admin.Especialistas.create', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica', 'direccion'));
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,35 +53,44 @@ class EspecialistaController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $especialista = new Especialista();
-        $cargo = new Cargo();
-        $gerencia = new Gerencia();
-        $ubicacion_fisica = new Ubicacion_Fisica();
         $telefono = new Telefono();
         $direccion = new Direccion();
+
+
+        $telefono->operadora = $request->post('operadora');
+        $telefono->numero = $request->post('numero');
+        $telefono->save();
+
+        
 
         $especialista->nombres = $request->post('nombres');
         $especialista->apellidos = $request->post('apellidos');
         $especialista->cedula = $request->post('cedula');
         $especialista->fech_nacimiento = $request->post('fech_nacimiento');
         $especialista->nm_ct = $request->post('nm_ct');
-        $especialista->fec_ing = $request->post('fec_ing');
-        $especialista->fec_ing_dpto = $request->post('fec_ing_dpto');
+        $especialista->fecha_ing = $request->post('fecha_ing');
+        $especialista->fecha_ing_dpto = $request->post('fecha_ing_dpto');
         $especialista->email = $request->post('email');
         $especialista->bl_cargos_id = $request->post('bl_cargos_id');
         $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
         $especialista->bl_ubicaciones_fisicas_id = $request->post('bl_ubicaciones_fisicas_id');
-
-        $telefono->operadora = $request->post('operadora');
-        $telefono->telefono = $request->post('telefono');
-
-        $direccion->descripcion = $request->post('descripcion');
+        $especialista->bl_telefonos_id = $telefono->id;
 
         $especialista->save(); 
-        $telefono->save();
-        $direccion->save();
 
-        $especialista->telefonos()->attach($request->get('telefonos'));
-        $especialista->direcciones()->attach($request->get('direcciones'));
+        $direccion->descripcion = $request->post('descripcion');
+        $direccion->bl_especialistas_id = $especialista->id;
+        $direccion->save();
+        
+        
+        //$especialista->telefonos()->attach('bl_telefonos_id->id',['bl_especialistas_id'=>'bl_especialistas_id']);
+
+        
+        
+        
+//$espe= Especialista();
+//dd($espe)->telefonos()->attach('id',['bl_especialistas_id'=>'id']);
+        
 
         return redirect()->route("especialista.index")->with("success", "¡Registro agregado exitosamente!");
     }
@@ -106,8 +116,8 @@ class EspecialistaController extends Controller
         $gerencia = Gerencia::all();
         $ubicacion_fisica = Ubicacion_Fisica::all();
 
-        $direccion = Direccion::find($id);
-        $telefono = Telefono::find($id);
+        $direccion = Direccion::all();
+        $telefono = Telefono::all();
 
         return view("admin.Especialistas.edit", compact('especialista', 'direccion', 'telefono', 'cargo', 'gerencia', 'ubicacion_fisica'));
         
@@ -121,6 +131,14 @@ class EspecialistaController extends Controller
         //$ubicacion_fisica = Ubicacion_Fisica::all();
 
         $especialista = Especialista::find($id);
+        $telefono = new Telefono();
+        $direccion = new Direccion();
+        
+
+        $telefono->operadora = $request->post('operadora');
+        $telefono->numero = $request->post('numero');
+        $telefono->save();
+
         
 
         $especialista->nombres = $request->post('nombres');
@@ -128,24 +146,22 @@ class EspecialistaController extends Controller
         $especialista->cedula = $request->post('cedula');
         $especialista->fech_nacimiento = $request->post('fech_nacimiento');
         $especialista->nm_ct = $request->post('nm_ct');
-        $especialista->fec_ing = $request->post('fec_ing');
-        $especialista->fec_ing_dpto = $request->post('fec_ing_dpto');
+        $especialista->fecha_ing = $request->post('fecha_ing');
+        $especialista->fecha_ing_dpto = $request->post('fecha_ing_dpto');
         $especialista->email = $request->post('email');
         $especialista->bl_cargos_id = $request->post('bl_cargos_id');
         $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
         $especialista->bl_ubicaciones_fisicas_id = $request->post('bl_ubicaciones_fisicas_id');
-
-        $telefono->operadora = $request->post('operadora');
-        $telefono->telefono = $request->post('telefono');
-
-        $direccion->descripcion = $request->post('descripcion');
+        $especialista->bl_telefonos_id = $telefono->id;
 
         $especialista->save(); 
-        $telefono->save();
+
+        $direccion->descripcion = $request->post('descripcion');
+        $direccion->bl_especialistas_id = $especialista->id;
         $direccion->save();
         
         
-        return redirect()->route("especialista.index", compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica'))->with("success", "¡Actualización realizada exitosamente!");
+        return redirect()->route("especialista.index")->with("success", "¡Actualización realizada exitosamente!");
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

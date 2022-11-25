@@ -12,8 +12,8 @@
     <form class="row g-3" action="{{route('ubicacion_fisica.store')}}" method="POST">
         @csrf
   <div class="col-md-3">
-    <label for="ubicacion_fisica" class="form-label">Ubicación o Piso</label>
-    <input name="ubicacion_fisica" type="text" class="form-control" id="ubicacion_fisica" placeholder="Escribe solo el nombre o piso de ubicación" required>
+    <label for="piso" class="form-label">Ubicación o Piso</label>
+    <input name="piso" type="text" class="form-control" id="piso" placeholder="Escribe solo el nombre o piso de ubicación" required>
   </div>
   <div class="col-md-3">
     <label for="descripcion" class="form-label">Descripción</label>

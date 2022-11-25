@@ -25,7 +25,7 @@ class GerenciaController extends Controller
         //$gerencia = Gerencia::all();
         $gerencia = new Gerencia();
         $gerencia->gerencia = $request->post('gerencia');
-        $gerencia->gerencia_linea = $request->post('gerencia_linea');
+        $gerencia->vicepresidencia = $request->post('vicepresidencia');
         $gerencia->descripcion = $request->post('descripcion');
         $gerencia->save();
 
@@ -52,7 +52,7 @@ class GerenciaController extends Controller
         //$gerencia = Gerencia::all();
         $gerencia = Gerencia::find($id);
         $gerencia->gerencia = $request->post('gerencia');
-        $gerencia->gerencia_linea = $request->post('gerencia_linea');
+        $gerencia->vicepresidencia = $request->post('vicepresidencia');
         $gerencia->descripcion = $request->post('descripcion');
         $gerencia->save();
 

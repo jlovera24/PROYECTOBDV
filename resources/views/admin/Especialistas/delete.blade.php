@@ -15,9 +15,9 @@
       <thead>
         <tr>
           <th scope="col">Nombres</th>
-          <th scope="col">Apellido</th>
+          <th scope="col">Apellidos</th>
           <th scope="col">Email</th>
-          <th scope="col">ID Gerencia</th>
+          <th scope="col">Gerencia</th>
           <th scope="col">Fecha de Actualización</th>
         </tr>
       </thead>
@@ -26,7 +26,7 @@
         <tr>
         <!--  <th scope="row">1</th>  -->
         <td>{{$solicitante->nombres}}</td>
-        <td>{{$solicitante->apellido}}</td>
+        <td>{{$solicitante->apellidos}}</td>
         <td>{{$solicitante->email}}</td>
         <td>{{$solicitante->bl_gerencias_id}}</td>
         <td>{{$solicitante->updated_at}}</td>

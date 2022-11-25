@@ -14,7 +14,7 @@
     <table class="table table-hover !important">
       <thead>
         <tr>
-          <th scope="col">Ubicación o Piso</th>
+          <th scope="col">Piso o Ubicación</th>
           <th scope="col">Descripción</th>
           <th scope="col">Fecha de actualización</th>
         </tr>
@@ -23,7 +23,7 @@
 
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <td>{{$ubicacion_fisica->ubicacion_fisica}}</td>
+          <td>{{$ubicacion_fisica->piso}}</td>
           <td>{{$ubicacion_fisica->descripcion}}</td>
           <td>{{$ubicacion_fisica->updated_at}}</td>
         </tr>

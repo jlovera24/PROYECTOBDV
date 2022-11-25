@@ -10,7 +10,7 @@
     <p>Bienvenido</p>
 
 
-    <form class="row g-3" action="{{route('especialista.update', $especialista->id, $direccion->id)}}" method="POST">
+    <form class="row g-3" action="{{route('especialista.update', $especialista->id)}}" method="POST">
         @csrf
         @method("PUT")
 
@@ -40,13 +40,13 @@
           <input name="nm_ct" type="text" class="form-control" id="nm_ct" placeholder="Escribe el primer apellido" required value="{{$especialista->nm_ct}}">
         </div>
         <div class="col-md-3">
-          <label for="fec_ing" class="form-label">Fecha Ingreso Institución</label>
-          <input name="fec_ing" type="date" class="form-control" id="fec_ing" placeholder="Escribe solo correos corporativos" required value="{{$especialista->fec_ing}}">
+          <label for="fecha_ing" class="form-label">Fecha Ingreso Institución</label>
+          <input name="fecha_ing" type="date" class="form-control" id="fecha_ing" placeholder="Escribe solo correos corporativos" required value="{{$especialista->fecha_ing}}">
         </div>
       
         <div class="col-md-3">
-          <label for="fec_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
-          <input name="fec_ing_dpto" type="date" class="form-control" id="fec_ing_dpto" placeholder="Escribe uno o dos nombres" required value="{{$especialista->fec_ing_dpto}}">
+          <label for="fecha_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
+          <input name="fecha_ing_dpto" type="date" class="form-control" id="fecha_ing_dpto" placeholder="Escribe uno o dos nombres" required value="{{$especialista->fecha_ing_dpto}}">
         </div>
           
         <div class="col-md-3">
@@ -61,20 +61,31 @@
 
       
         <div class="col-md-4">
-          <label for="bl_cargos_id" class="form-label">Cargo:</label>
-          <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id" >
-        
-            @foreach ($cargo as $carg)
-            <option value="{{$carg->id}}">{{$carg->nombre}}</option>
-            @endforeach 
-            
+          <label for="bl_cargos_id" class="form-label">Cargo</label>
+          @foreach ($cargo as $car)
+          @if ($especialista->bl_cargos_id == $car->id)
+          <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id" required >
+            <option value="{{$car->id}}">{{$car->nombre}}</option>
+          @endif
+          @endforeach 
+
+          @foreach ($cargo as $carg)
+          <option value="{{$carg->id}}">{{$carg->nombre}}</option>
+          @endforeach
+          
+
           </select>
         </div>
         
         <div class="col-md-4">
           <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
+          @foreach ($gerencia as $ger)
+            @if ($especialista->bl_gerencias_id == $ger->id)
           <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id" >
-        
+            <option value="{{$ger->id}}">{{$ger->gerencia}}</option>
+            @endif
+          @endforeach 
+
             @foreach ($gerencia as $geren)
             <option value="{{$geren->id}}">{{$geren->gerencia}}</option>
             @endforeach 
@@ -84,10 +95,15 @@
         
         <div class="col-md-5">
           <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
+          @foreach ($ubicacion_fisica as $ubi)
+            @if ($especialista->bl_ubicaciones_fisicas_id == $ubi->id)
           <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id" >
-        
-            @foreach ($ubicacion_fisica as $ubi)
-            <option value="{{$ubi->id}}">{{$ubi->ubicacion_fisica}}</option>
+            <option value="{{$ubi->id}}">{{$ubi->piso}}</option>
+            @endif
+          @endforeach
+
+            @foreach ($ubicacion_fisica as $ubic)
+            <option value="{{$ubic->id}}">{{$ubic->piso}}</option>
             @endforeach 
             
           </select>
@@ -95,8 +111,14 @@
         
         
         <label for="operadora" class="form-label">Operadora telefónica</label>
-          <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required value="{{$telefono->operadora}}">
+          <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required >
   
+          @foreach ($telefono as $telf)
+            @if ($especialista->bl_telefonos_id == $telf->id)
+            <option value="{{$telf->id}}">{{$telf->operadora}}</option>  
+            @endif
+          @endforeach
+
             <option value="0412">0412</option>
             <option value="0424">0424</option>
             <option value="0414">0414</option>
@@ -106,15 +128,26 @@
         
           </select>
         
+
           <div class="col-md-3">
-            <label for="telefono" class="form-label">Número de Teléfono</label>
-            <input name="telefono" type="text" class="form-control" id="telefono" placeholder="Escribe el primer apellido" required value="{{$telefono->telefono}}">
+            <label for="numero" class="form-label">Número de Teléfono</label>
+            @foreach ($telefono as $tel)
+            @if ($especialista->bl_telefonos_id == $tel->id)
+            <input name="numero" type="text" class="form-control" id="numero" placeholder="" required value="{{$tel->numero}}">
+            @endif
+            @endforeach
           </div>
         
-        
+            
+          
           <div class="col-md-3">
             <label for="descripcion" class="form-label">Dirección</label>
-            <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required value="{{$direccion->descripcion}}" >
+            @foreach ($direccion as $dir)
+            @if ($especialista->id == $dir->bl_especialistas_id)
+            <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required value="{{$dir->descripcion}}">
+            @endif
+            @endforeach
+
           </div>
   
 

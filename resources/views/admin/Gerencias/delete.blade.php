@@ -25,7 +25,7 @@
         <tr>
         <!--  <th scope="row">1</th>  -->
           <td>{{$gerencia->gerencia}}</td>
-          <td>{{$gerencia->gerencia_linea}}</td>
+          <td>{{$gerencia->vicepresidencia}}</td>
           <td>{{$gerencia->descripcion}}</td>
           <td>{{$gerencia->updated_at}}</td>
         </tr>

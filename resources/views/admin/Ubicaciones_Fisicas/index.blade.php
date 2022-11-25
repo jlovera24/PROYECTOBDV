@@ -44,7 +44,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Ubicación o Piso</th>
+          <th scope="col">Piso o Ubicación</th>
           <th scope="col">Descripción</th>
           <th scope="col">Fecha de actualización</th>
           <th scope="col-2">Modificar</th>
@@ -57,7 +57,7 @@
    
         <tr>
         <!--  <th scope="row">1</th>  -->
-          <td>{{$item->ubicacion_fisica}}</td>
+          <td>{{$item->piso}}</td>
           <td>{{$item->descripcion}}</td>
           <td>{{$item->updated_at}}</td>
 
