@@ -402,7 +402,7 @@ return [
             ],
         ],
 
-        [
+   /*     [
             'text'    => 'Seguimiento',
             'icon'    => 'fas fa-clipboard-check',
             'submenu' => [
@@ -418,7 +418,7 @@ return [
                 ],
                         
             ],
-        ],
+        ],   */
 
         ////////////////////////////////////////////////
         ['header' => 'Módulos Datos Internos Especialistas'],
