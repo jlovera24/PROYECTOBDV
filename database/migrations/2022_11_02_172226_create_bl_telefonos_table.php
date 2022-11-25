@@ -16,7 +16,7 @@ class CreateBlTelefonosTable extends Migration
         Schema::create('bl_telefonos', function (Blueprint $table) {
             $table->id();
             $table->integer('numero');
-            $table->enum('operadora', ['Seleccione...', '0412', '0424', '0414', '0426', '0416', '0212',])->default('Seleccione...');
+            $table->string('operadora');
             $table->timestamps();
         });
     }

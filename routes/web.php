@@ -81,6 +81,17 @@ Route::post('admin/especialista/store', [App\Http\Controllers\EspecialistaContro
 Route::get('admin/especialista/edit/{id}', [App\Http\Controllers\EspecialistaController::class, 'edit', 'edi'])->name('especialista.edit');
 Route::put('admin/especialista/update/{id}', [App\Http\Controllers\EspecialistaController::class, 'update'])->name('especialista.update');
 Route::delete('admin/especialista/destroy/{id}', [App\Http\Controllers\EspecialistaController::class, 'destroy'])->name('especialista.destroy');
+Route::get('admin/especialista/more/{id}', [App\Http\Controllers\EspecialistaController::class, 'more'])->name('especialista.more');
+
+//Equipos
+
+Route::get('admin/equipo/index', [App\Http\Controllers\EquipoController::class, 'index'])->name('equipo.index');
+Route::get('admin/equipo/create', [App\Http\Controllers\EquipoController::class, 'create'])->name('equipo.create');
+Route::get('admin/equipo/show/{id}', [App\Http\Controllers\EquipoController::class, 'show'])->name('equipo.show');
+Route::post('admin/equipo/store', [App\Http\Controllers\EquipoController::class, 'store'])->name('equipo.store');
+Route::get('admin/equipo/edit/{id}', [App\Http\Controllers\EquipoController::class, 'edit', 'edi'])->name('equipo.edit');
+Route::put('admin/equipo/update/{id}', [App\Http\Controllers\EquipoController::class, 'update'])->name('equipo.update');
+Route::delete('admin/equipo/destroy/{id}', [App\Http\Controllers\EquipoController::class, 'destroy'])->name('equipo.destroy');
 
 
 

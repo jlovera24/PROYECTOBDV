@@ -61,7 +61,8 @@ class EspecialistaController extends Controller
         $telefono->numero = $request->post('numero');
         $telefono->save();
 
-        
+        $direccion->descripcion = $request->post('descripcion');
+        $direccion->save();
 
         $especialista->nombres = $request->post('nombres');
         $especialista->apellidos = $request->post('apellidos');
@@ -75,12 +76,12 @@ class EspecialistaController extends Controller
         $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
         $especialista->bl_ubicaciones_fisicas_id = $request->post('bl_ubicaciones_fisicas_id');
         $especialista->bl_telefonos_id = $telefono->id;
+        $especialista->bl_direcciones_id = $direccion->id;
+        
 
         $especialista->save(); 
 
-        $direccion->descripcion = $request->post('descripcion');
-        $direccion->bl_especialistas_id = $especialista->id;
-        $direccion->save();
+        
         
         
         //$especialista->telefonos()->attach('bl_telefonos_id->id',['bl_especialistas_id'=>'bl_especialistas_id']);
@@ -101,9 +102,30 @@ class EspecialistaController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $especialista = Especialista::find($id);
+        $cargo = Cargo::all();
+        $gerencia = Gerencia::all();
+        $ubicacion_fisica = Ubicacion_Fisica::all();
+        $direccion = Direccion::all();
+        $telefono = Telefono::all();
         
-        return view("admin.Especialistas.delete", compact('especialista'));
+        return view("admin.Especialistas.delete", compact('especialista', 'telefono', 'cargo', 'gerencia', 'ubicacion_fisica', 'direccion'));
     }
+
+
+    public function more($id)
+    {
+        //$ubicacion_fisica = ubicacion_fisica::all();
+        $especialista = Especialista::find($id);
+        $cargo = Cargo::all();
+        $gerencia = Gerencia::all();
+        $ubicacion_fisica = Ubicacion_Fisica::all();
+        $direccion = Direccion::all();
+        $telefono = Telefono::all();
+        
+        return view("admin.Especialistas.more", compact('especialista', 'telefono', 'cargo', 'gerencia', 'ubicacion_fisica', 'direccion'));
+    }
+
+
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -139,7 +161,8 @@ class EspecialistaController extends Controller
         $telefono->numero = $request->post('numero');
         $telefono->save();
 
-        
+        $direccion->descripcion = $request->post('descripcion');
+        $direccion->save();
 
         $especialista->nombres = $request->post('nombres');
         $especialista->apellidos = $request->post('apellidos');
@@ -153,12 +176,10 @@ class EspecialistaController extends Controller
         $especialista->bl_gerencias_id = $request->post('bl_gerencias_id');
         $especialista->bl_ubicaciones_fisicas_id = $request->post('bl_ubicaciones_fisicas_id');
         $especialista->bl_telefonos_id = $telefono->id;
+        $especialista->bl_direcciones_id = $direccion->id;
+        
 
         $especialista->save(); 
-
-        $direccion->descripcion = $request->post('descripcion');
-        $direccion->bl_especialistas_id = $especialista->id;
-        $direccion->save();
         
         
         return redirect()->route("especialista.index")->with("success", "¡Actualización realizada exitosamente!");

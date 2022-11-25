@@ -102,9 +102,7 @@
             @endif
           @endforeach
 
-            @foreach ($ubicacion_fisica as $ubic)
-            <option value="{{$ubic->id}}">{{$ubic->piso}}</option>
-            @endforeach 
+            
             
           </select>
         </div>
@@ -115,16 +113,16 @@
   
           @foreach ($telefono as $telf)
             @if ($especialista->bl_telefonos_id == $telf->id)
-            <option value="{{$telf->id}}">{{$telf->operadora}}</option>  
+            <option value="{{$telf->operadora}}">{{$telf->operadora}}</option>  
             @endif
           @endforeach
 
-            <option value="0412">0412</option>
-            <option value="0424">0424</option>
-            <option value="0414">0414</option>
-            <option value="0426">0426</option>
-            <option value="0416">0416</option>
-            <option value="0212">0212</option>
+          <option value="0412">0412</option>
+          <option value="0424">0424</option>
+          <option value="0414">0414</option>
+          <option value="0426">0426</option>
+          <option value="0416">0416</option>
+          <option value="0212">0212</option>
         
           </select>
         
@@ -143,7 +141,7 @@
           <div class="col-md-3">
             <label for="descripcion" class="form-label">Dirección</label>
             @foreach ($direccion as $dir)
-            @if ($especialista->id == $dir->bl_especialistas_id)
+            @if ($especialista->bl_direcciones_id == $dir->id)
             <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required value="{{$dir->descripcion}}">
             @endif
             @endforeach

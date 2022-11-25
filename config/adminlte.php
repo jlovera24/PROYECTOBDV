@@ -290,6 +290,93 @@ return [
             'icon' => 'fas fa-fw fa-list',
         ],
 
+        
+        
+        
+        
+        [
+            'text'    => 'Direcciones',
+            'icon'    => 'fas fa-map-marker',
+            'submenu' => [
+                
+                [
+                    'text'    => 'Ciudad',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Estado',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Parroquia',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                [
+                    'text'    => 'Municipio',
+                    'url'     => '#',
+                    'submenu' => [
+                        [
+                            'text' => 'Consultar',
+                            'icon'    => 'fas fa-search',
+                            'url'  => '#',
+                        ],
+                        [
+                            'text'    => 'Registrar',
+                            'icon'    => 'fas fa-save',
+                            'url'     => '#',
+                        ],
+                        
+                    ],
+                ],
+                
+            ],
+        ],
+        
+        
+        
+        
+        
+        
+        
         */
 
 //////////////////////////////////////////////////////////////////////////////////////
@@ -372,82 +459,7 @@ return [
             ],
         ],
 
-        [
-            'text'    => 'Direcciones',
-            'icon'    => 'fas fa-map-marker',
-            'submenu' => [
-                
-                [
-                    'text'    => 'Ciudad',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Consultar',
-                            'icon'    => 'fas fa-search',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Registrar',
-                            'icon'    => 'fas fa-save',
-                            'url'     => '#',
-                        ],
-                        
-                    ],
-                ],
-                [
-                    'text'    => 'Estado',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Consultar',
-                            'icon'    => 'fas fa-search',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Registrar',
-                            'icon'    => 'fas fa-save',
-                            'url'     => '#',
-                        ],
-                        
-                    ],
-                ],
-                [
-                    'text'    => 'Parroquia',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Consultar',
-                            'icon'    => 'fas fa-search',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Registrar',
-                            'icon'    => 'fas fa-save',
-                            'url'     => '#',
-                        ],
-                        
-                    ],
-                ],
-                [
-                    'text'    => 'Municipio',
-                    'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'Consultar',
-                            'icon'    => 'fas fa-search',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'Registrar',
-                            'icon'    => 'fas fa-save',
-                            'url'     => '#',
-                        ],
-                        
-                    ],
-                ],
-                
-            ],
-        ],
+        
 
         [
             'text'    => 'Equipos Asignados',
@@ -456,12 +468,12 @@ return [
                 [
                     'text' => 'Consultar',
                     'icon'    => 'fas fa-search',
-                    'url'  => '#',
+                    'url'  => 'admin/equipo/index',
                 ],
                 [
                     'text'    => 'Registrar',
                     'icon'    => 'fas fa-save',
-                    'url'     => '#',
+                    'url'     => 'admin/equipo/create',
                 ],
                         
             ],

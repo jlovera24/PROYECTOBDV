@@ -11,7 +11,7 @@ class Especialista extends Model
     protected $table = 'bl_especialistas';
     public function direcciones()
     {
-        return $this->hasMany(Direccion::class);    
+        return $this->belongsTo(Direccion::class);    
     }
 
     public function telefonos()

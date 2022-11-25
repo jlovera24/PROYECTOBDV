@@ -16,16 +16,16 @@ class CreateBlDireccionesTable extends Migration
         Schema::create('bl_direcciones', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion');
-            $table->unsignedBigInteger('bl_especialistas_id');
+            //$table->unsignedBigInteger('bl_especialistas_id');
             //$table->unsignedBigInteger('bl_ciudades_id');
             //$table->unsignedBigInteger('bl_estados_id');
             //$table->unsignedBigInteger('bl_parroquias_id');
             //$table->unsignedBigInteger('bl_municipios_id');
             $table->timestamps();
 
-            $table->foreign('bl_especialistas_id')->references('id')->on('bl_especialistas')
-            ->onUpdate('cascade')
-            ->onDelete('cascade');
+            //$table->foreign('bl_especialistas_id')->references('id')->on('bl_especialistas')
+            //->onUpdate('cascade')
+            //->onDelete('cascade');
 
             //$table->foreign('bl_ciudades_id')->references('id')->on('bl_ciudades')
             //      ->onUpdate ('cascade')

@@ -16,8 +16,10 @@ class CreateBlEquiposTable extends Migration
         Schema::create('bl_equipos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_equipo');
-            $table->enum('estatus', ['Seleccione...', 'Activo', 'Inactivo'])->default('Seleccione...');
-            $table->enum('ubicacion', ['Seleccione...', 'Puesto de Trabajo', 'Guardia remota'])->default('Seleccione...');
+            $table->string('estatus');
+            $table->string('ubicacion');
+            //$table->enum('estatus', ['Seleccione...', 'Activo', 'Inactivo'])->default('Seleccione...');
+            //$table->enum('ubicacion', ['Seleccione...', 'Puesto de Trabajo', 'Guardia remota'])->default('Seleccione...');
             $table->string('serial');
             $table->unsignedBigInteger('bl_especialistas_id');
             $table->timestamps();

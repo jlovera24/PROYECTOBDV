@@ -27,6 +27,7 @@ class CreateBlEspecialistasTable extends Migration
             $table->unsignedBigInteger('bl_ubicaciones_fisicas_id');
             $table->unsignedBigInteger('bl_gerencias_id');
             $table->unsignedBigInteger('bl_telefonos_id');
+            $table->unsignedBigInteger('bl_direcciones_id');
             $table->timestamps();
 
             $table->foreign('bl_cargos_id')->references('id')->on('bl_cargos')
@@ -42,6 +43,10 @@ class CreateBlEspecialistasTable extends Migration
             ->onDelete('cascade');
 
             $table->foreign('bl_telefonos_id')->references('id')->on('bl_telefonos')
+            ->onUpdate('cascade')
+            ->onDelete('cascade');
+
+            $table->foreign('bl_direcciones_id')->references('id')->on('bl_direcciones')
             ->onUpdate('cascade')
             ->onDelete('cascade');
 
