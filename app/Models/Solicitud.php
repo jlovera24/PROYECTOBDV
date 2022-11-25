@@ -11,7 +11,7 @@ class Solicitud extends Model
     protected $table = 'bl_solicitudes';
     public function especialistas()
     {
-        return $this->belongsToMany(Especialista::class);
+        return $this->belongsTo(Especialista::class);
     }
 
     public function solicitante()

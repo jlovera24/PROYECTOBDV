@@ -49,7 +49,7 @@
     <input name="fecha_cierre" type="date" class="form-control" id="fecha_cierre" placeholder="Escribe uno o dos nombres" >
   </div>
 
-  <div class="col-md-1">
+  <div class="col-md-3">
     <label for="porcentaje_avance" class="form-label">Porcentaje de Avance</label>
     <input name="porcentaje_avance" type="text" class="form-control" id="porcentaje_avance" placeholder="Escribe el primer apellido" >
   </div>
@@ -67,28 +67,30 @@
     <input name="crq_produccion" type="text" class="form-control" id="crq_produccion" placeholder="Escribe solo correos corporativos" >
   </div>
 
-
-  <label for="tipo_solicitud" class="form-label">Prioridad</label>
-  <select class="form-select form-select-sm col-md-2" name="tipo_solicitud" id="tipo_solicitud" aria-placeholder="Seleccione una Opción" required>
-    <option value="" selected disabled>Seleccione una prioridad</option>
+  <div class="col-md-4">
+  <label for="tipo_solicitud" class="form-label">Tipo de Solicitud</label>
+  <select class="form-control" name="tipo_solicitud" id="tipo_solicitud" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione un tipo</option>
     <option value="Soporte">Soporte</option>
     <option value="Requerimiento">Requerimiento</option>
     <option value="Incidencia">Incidencia</option>
     <option value="Proyecto">Proyecto</option>
   </select>
+</div>
 
-
-
+<div class="col-md-4">
   <label for="tipo_soporte" class="form-label">Tipo de Soporte</label>
-  <select class="form-select form-select-sm col-md-2" name="tipo_soporte" id="tipo_soporte" aria-placeholder="Seleccione una Opción" required>
+  <select class="form-control" name="tipo_soporte" id="tipo_soporte" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione un tipo de soporte</option>
     <option value="Funcional">Funcional</option>
     <option value="Técnico">Técnico</option>
     <option value="Prioridad">Prioridad</option>
   </select>
+</div>
 
+  <div class="col-md-4">
   <label for="estatus" class="form-label">Estatus</label>
-  <select class="form-select form-select-sm col-md-3" name="estatus" id="estatus" aria-placeholder="Seleccione una Opción" required>
+  <select class="form-control" name="estatus" id="estatus" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione un Estatus</option>
     <option value="Por Iniciar">Por Iniciar</option>
     <option value="En Proceso">En Proceso</option>
@@ -97,46 +99,61 @@
     <option value="Anulado">Anulado</option>
     <option value="Cerrado">Cerrado</option>
   </select>
+</div>
 
-
-
+  <div class="col-md-4">
   <label for="normativo" class="form-label">¿Normativo?</label>
-  <select class="form-select form-select-sm col-md-2" name="normativo" id="normativo" aria-placeholder="Seleccione una Opción" required>
+  <select class="form-control" name="normativo" id="normativo" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione una prioridad</option>
     <option value="Sí">Sí</option>
     <option value="No">No</option>
   </select>
+</div>
 
-
+  <div class="col-md-4">
   <label for="prioridad" class="form-label">Prioridad</label>
-  <select class="form-select form-select-sm col-md-2" name="prioridad" id="prioridad" aria-placeholder="Seleccione una Opción" required>
+  <select class="form-control" name="prioridad" id="prioridad" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione una prioridad</option>
     <option value="ALTA">ALTA</option>
     <option value="MEDIA">MEDIA</option>
     <option value="BAJA">BAJA</option>
   </select>
+</div>
 
-
+  
   <div class="col-md-2">
     <label for="bl_solicitantes_id" class="form-label">Solcitante:</label>
-    <select class="form-select" aria-label="Default select example" name="bl_solicitantes_id" id="bl_solicitantes_id" required>
+    <select class="form-control" aria-label="Default select example" name="bl_solicitantes_id" id="bl_solicitantes_id" required>
   
       @foreach ($solicitante as $soli)
       <option value="{{$soli->id}}">{{$soli->email}}</option>
       @endforeach 
       
     </select>
+  </div>
+
+    <div class="col-md-2">
+      <label for="bl_libras_id" class="form-label">Especialista Responsable</label>
+      <select class="form-control" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
+    
+        @foreach ($especialista as $esp)
+        <option value="{{$esp->id}}">{{$esp->email}}</option>
+        @endforeach 
+        
+      </select>
+    </div>
 
     <div class="col-md-2">
       <label for="bl_libras_id" class="form-label">Aplicación</label>
-      <select class="form-select" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
+      <select class="form-control" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
     
         @foreach ($libra as $li)
         <option value="{{$li->id}}">{{$li->nom_aplicacion}}</option>
         @endforeach 
         
       </select>
- 
+    </div>
+
   
   {{--
 <div>
