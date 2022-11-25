@@ -246,9 +246,9 @@ return [
             'text'        => 'Página Principal',
             'url'         => 'admin/',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 1,
+            
             'label_color' => 'success',
-        ],
+        ], 
 
         
 

@@ -13,52 +13,96 @@
 
   <form class="row g-3" action="{{route('especialista.store')}}" method="POST">
         @csrf
+ 
+      <div class="col-md-12">
+        <h5><b>Datos Personales</b></h5>
+      </div>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <label for="nombres" class="form-label">Nombres</label>
     <input name="nombres" type="text" class="form-control" id="nombres" placeholder="Escribe uno o dos nombres" required>
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-3">
     <label for="apellidos" class="form-label">Apellidos</label>
-    <input name="apellidos" type="text" class="form-control" id="apellidos" placeholder="Escribe uno o dos nombres" required>
+    <input name="apellidos" type="text" class="form-control" id="apellidos" placeholder="Escribe uno o dos apellidos" required>
   </div>
 
-  <div class="col-md-2">
+  <div class="col-md-3">
     <label for="cedula" class="form-label">Cédula de Identidad</label>
-    <input name="cedula" type="text" class="form-control" id="cedula" placeholder="Escribe solo correos corporativos" required>
+    <input name="cedula" type="text" class="form-control" id="cedula" placeholder="Escribe tu C.I." required>
   </div>
-
-
-
-  <div class="col-md-2">
+  <div class="col-md-3">
     <label for="fech_nacimiento" class="form-label">Fecha de Nacimiento</label>
-    <input name="fech_nacimiento" type="date" class="form-control" id="fech_nacimiento" placeholder="Escribe uno o dos nombres" required>
+    <input name="fech_nacimiento" type="date" class="form-control" id="fech_nacimiento" placeholder="" required>
   </div>
+
+  <div class="col-md-12">
+    <h5></h5>
+  </div>
+
+
   <div class="col-md-3">
+  <label for="operadora" class="form-label">Operadora</label>
+  <select class="form-control" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una Operadora</option>
+    <option value="0412">0412</option>
+    <option value="0424">0424</option>
+    <option value="0414">0414</option>
+    <option value="0426">0426</option>
+    <option value="0416">0416</option>
+    <option value="0212">0212</option>
+
+  </select>
+</div>
+
+  <div class="col-md-3">
+    <label for="numero" class="form-label">Número de Teléfono</label>
+    <input name="numero" type="text" class="form-control" id="numero" placeholder="Escribe un número telefónico" required>
+  </div>
+
+
+  <div class="col-md-3">
+    <label for="descripcion" class="form-label">Dirección</label>
+    <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe una dirección corta" required>
+  </div>
+
+<div class="col-md-12">
+      <h5><hr></h5>
+    </div>
+  <div class="col-md-12">
+
+    <h5><b>Datos laborales</b></h5>
+  </div>
+
+  
+  <div class="col-md-2">
     <label for="nm_ct" class="form-label">NM o CT de usuario</label>
-    <input name="nm_ct" type="text" class="form-control" id="nm_ct" placeholder="Escribe el primer apellido" required>
+    <input name="nm_ct" type="text" class="form-control" id="nm_ct" placeholder="Escribe tu ID" required>
   </div>
   <div class="col-md-3">
-    <label for="fecha_ing" class="form-label">Fecha Ingreso Institución</label>
+    <label for="fecha_ing" class="form-label">Fecha Ingreso</label>
     <input name="fecha_ing" type="date" class="form-control" id="fecha_ing" placeholder="Escribe solo correos corporativos" required>
   </div>
 
   <div class="col-md-3">
     <label for="fecha_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
-    <input name="fecha_ing_dpto" type="date" class="form-control" id="fecha_ing_dpto" placeholder="Escribe uno o dos nombres" required>
+    <input name="fecha_ing_dpto" type="date" class="form-control" id="fecha_ing_dpto" placeholder=" " required>
   </div>
     
-  <div class="col-md-3">
+  <div class="col-md-4">
     <label for="email" class="form-label">Correo Corporativo</label>
     <input name="email" type="text" class="form-control" id="email" placeholder="Escribe solo correos corporativos" required>
   </div>
 
+  <div class="col-md-12">
+    <h5></h5>
+  </div>
 
 
-<div class="col-md-4">
+  <div class="col-md-4">
   <label for="bl_cargos_id" class="form-label">Cargo:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id">
+  <select class="form-control" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id">
 
     @foreach ($cargo as $carg)
     <option value="{{$carg->id}}">{{$carg->nombre}}</option>
@@ -69,7 +113,7 @@
 
 <div class="col-md-4">
   <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
+  <select class="form-control" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
 
     @foreach ($gerencia as $geren)
     <option value="{{$geren->id}}">{{$geren->gerencia}}</option>
@@ -78,9 +122,9 @@
   </select>
 </div>
 
-<div class="col-md-5">
+<div class="col-md-4">
   <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id">
+  <select class="form-control" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id">
 
     @foreach ($ubicacion_fisica as $ubi)
     <option value="{{$ubi->id}}">{{$ubi->piso}}</option>
@@ -90,28 +134,7 @@
 </div>
 
 
-<label for="operadora" class="form-label">Operadora</label>
-  <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required>
-    <option value="" selected disabled>Seleccione una Operadora</option>
-    <option value="0412">0412</option>
-    <option value="0424">0424</option>
-    <option value="0414">0414</option>
-    <option value="0426">0426</option>
-    <option value="0416">0416</option>
-    <option value="0212">0212</option>
 
-  </select>
-
-  <div class="col-md-3">
-    <label for="numero" class="form-label">Número de Teléfono</label>
-    <input name="numero" type="text" class="form-control" id="numero" placeholder="Escribe el primer apellido" required>
-  </div>
-
-
-  <div class="col-md-3">
-    <label for="descripcion" class="form-label">Dirección</label>
-    <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required>
-  </div>
  
   
   {{--
