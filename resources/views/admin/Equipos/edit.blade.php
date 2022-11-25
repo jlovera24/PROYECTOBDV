@@ -10,36 +10,41 @@
     <p>Bienvenido</p>
 
 
-    <form class="row g-3" action="{{route('equipo.update', $especialista->id)}}" method="POST">
+    <form class="row g-3" action="{{route('equipo.update', $equipo->id)}}" method="POST">
         @csrf
         @method("PUT")
 
 
         <div class="col-md-3">
           <label for="tipo_equipo" class="form-label">Tipo de Equipo</label>
-          <input name="tipo_equipo" type="text" class="form-control" id="tipo_equipo" placeholder="Escribe uno o dos nombres" required value="{{$equipo->tipo_solicitud}}">
+          <input name="tipo_equipo" type="text" class="form-control" id="tipo_equipo" placeholder="Escribe uno o dos nombres" required value="{{$equipo->tipo_equipo}}">
         </div>
 
 
+        <label for="estatus" class="form-label">Estatus</label>
         <select class="form-select form-select-sm" name="estatus" id="estatus" required>
-          <option value="{{$equipo->estatus}}" selected>{{$equipo->estatus}}</option>
-          <option value="" selected disabled>Seleccione un estatus</option>
-    <option value="En uso">En uso</option>
+    <option value="{{$equipo->estatus}}" selected>{{$equipo->estatus}}</option>
+    <option value="Activo">Activo</option>
     <option value="Dañado">Dañado</option>
         </select>
 
-        <label for="serial" class="form-label">Ubicación</label>
+        <label for="ubicacion" class="form-label">Ubicación</label>
         <select class="form-select form-select-sm" name="ubicacion" id="ubicacion" required>
     <option value="{{$equipo->ubicacion}}" selected>{{$equipo->ubicacion}}</option>
     <option value="Puesto de Trabajo">Puesto de Trabajo</option>
           <option value="Equipo de Guardia">Equipo de Guardia</option>
           <option value="En resguardo">En resguardo</option>
-          <option value="Soporte Técnico">En resguardo</option>
+          <option value="En reparación">En reparación</option>
     </select>
 
 
+    <div class="col-md-3">
+      <label for="serial" class="form-label">Serial</label>
+      <input name="serial" type="text" class="form-control" id="serial" placeholder="Escribe uno o dos nombres" required value="{{$equipo->serial}}">
+    </div>
+
         <div>
-          <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
+          <select class="form-select" aria-label="Default select example" name="bl_especialistas_id" id="bl_especialistas_id">
         
             @foreach ($especialista as $item)
             <option value="{{$item->id}}">{{$item->email}}</option>

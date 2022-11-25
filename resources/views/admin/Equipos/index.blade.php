@@ -45,6 +45,7 @@
           <th scope="col">Serial</th>
           <th scope="col">Nombres Especialista</th>
           <th scope="col">Apellidos Especialista</th>
+          <th scope="col">Fecha Actualización</th>
           <th scope="col-2">Modificar</th>
           <th scope="col-2">Eliminar</th>
         </tr>
@@ -64,13 +65,13 @@
           <td>{{$item->ubicacion}}</td>
           <td>{{$item->serial}}</td>
           @foreach ($especialista as $esp)
-              @if ($item->bl_especialistas_id == $especialista->id)
-              <td>{{$especialista->nombres}}</td>
+              @if ($item->bl_especialistas_id == $esp->id)
+              <td>{{$esp->nombres}}</td>
               @endif
           @endforeach
           @foreach ($especialista as $esp)
-              @if ($item->bl_especialistas_id == $especialista->id)
-              <td>{{$especialista->apellidos}}</td>
+              @if ($item->bl_especialistas_id == $esp->id)
+              <td>{{$esp->apellidos}}</td>
               @endif
           @endforeach
           {{-- <td>{{$item->gerencia->gerencia}}</td> --}}

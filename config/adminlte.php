@@ -391,12 +391,12 @@ return [
                 [
                     'text' => 'Consultar',
                     'icon'    => 'fas fa-search',
-                    'url'  => '#',
+                    'url'  => 'admin/solicitud/index',
                 ],
                 [
                     'text'    => 'Registrar',
                     'icon'    => 'fas fa-save',
-                    'url'     => '#',
+                    'url'     => 'admin/solicitud/create',
                 ],
                         
             ],

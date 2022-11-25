@@ -25,32 +25,37 @@
       <tbody>
 
         <tr>
+
         <!--  <th scope="row">1</th>  -->
-        <td>{{$solicitante->tipo_equipo}}</td>
-        <td>{{$solicitante->estatus}}</td>
-        <td>{{$solicitante->ubicacion}}</td>
-        <td>{{$solicitante->serial}}</td>
-        <td>{{$solicitante->bl_gerencias_id}}</td>
+        <td>{{$equipo->tipo_equipo}}</td>
+        <td>{{$equipo->estatus}}</td>
+        <td>{{$equipo->ubicacion}}</td>
+        <td>{{$equipo->serial}}</td>
+         
+
+        
         
         @foreach ($especialista as $esp)
-              @if ($item->bl_especialistas_id == $especialista->id)
-              <td>{{$especialista->nombres}}</td>
+              @if ($equipo->bl_especialistas_id == $esp->id)
+              <td>{{$esp->nombres}}</td>
               @endif
           @endforeach
 
 
         @foreach ($especialista as $esp)
-              @if ($item->bl_especialistas_id == $especialista->id)
-              <td>{{$especialista->apellidos}}</td>
+              @if ($equipo->bl_especialistas_id == $esp->id)
+              <td>{{$esp->apellidos}}</td>
               @endif
           @endforeach
-        </tr>
-
-        <td>{{$solicitante->updated_at}}</td>
+        
+      
+       
+      </tr>
+      
       
       </tbody>
     </table>
-
+    
     
       
 

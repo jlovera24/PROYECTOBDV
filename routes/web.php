@@ -93,6 +93,16 @@ Route::get('admin/equipo/edit/{id}', [App\Http\Controllers\EquipoController::cla
 Route::put('admin/equipo/update/{id}', [App\Http\Controllers\EquipoController::class, 'update'])->name('equipo.update');
 Route::delete('admin/equipo/destroy/{id}', [App\Http\Controllers\EquipoController::class, 'destroy'])->name('equipo.destroy');
 
+//Solicitudes
+
+Route::get('admin/solicitud/index', [App\Http\Controllers\SolicitudController::class, 'index'])->name('solicitud.index');
+Route::get('admin/solicitud/create', [App\Http\Controllers\SolicitudController::class, 'create'])->name('solicitud.create');
+Route::get('admin/solicitud/show/{id}', [App\Http\Controllers\SolicitudController::class, 'show'])->name('solicitud.show');
+Route::post('admin/solicitud/store', [App\Http\Controllers\SolicitudController::class, 'store'])->name('solicitud.store');
+Route::get('admin/solicitud/edit/{id}', [App\Http\Controllers\SolicitudController::class, 'edit', 'edi'])->name('solicitud.edit');
+Route::put('admin/solicitud/update/{id}', [App\Http\Controllers\SolicitudController::class, 'update'])->name('solicitud.update');
+Route::delete('admin/solicitud/destroy/{id}', [App\Http\Controllers\SolicitudController::class, 'destroy'])->name('solicitud.destroy');
+
 
 
 

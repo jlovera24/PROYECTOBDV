@@ -54,6 +54,7 @@ class EquipoController extends Controller
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
         $equipo = Equipo::find($id);
+        
         $especialista = Especialista::all();
         
         return view("admin.Equipos.delete", compact('equipo', 'especialista'));
