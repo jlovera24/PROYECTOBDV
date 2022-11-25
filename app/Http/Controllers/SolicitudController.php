@@ -19,9 +19,8 @@ class SolicitudController extends Controller
         $especialista = Especialista::all();
         $solicitante = Solicitante::all();
         $libra = Libra::all();
-        return view('admin.Especialistas.index', compact('especialista', 'cargo', 'gerencia', 'ubicacion_fisica', 'telefono', 'direccion'));
+        return view('admin.Especialistas.index', compact('especialista', 'solicitante', 'libra'));
         /*return view('admin.Solicitantes.index', compact('solicitante', 'all'));*/
-        $especialista->telefonos()->attach($telefono->id);
         
     }
 

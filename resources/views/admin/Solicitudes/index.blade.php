@@ -69,47 +69,49 @@
           <td>{{$item->solicitud_id}}</td>
           <td>{{$item->tipo_solicitud}}</td>
           <td>{{$item->descripcion_solicitud}}</td>
+          <td>{{$item->fecha_solicitud}}</td>
+          <td>{{$item->calidad_fecha_ini}}</td>
+          <td>{{$item->calidad_fecha_fin}}</td>
+          <td>{{$item->fecha_cierre}}</td>
+          <td>{{$item->porcentaje_avance}}</td>
+          <td>{{$item->estatus}}</td>
+          <td>{{$item->crq_calidad}}</td>
+          <td>{{$item->crq_produccion}}</td>
+          <td>{{$item->tipo_soporte}}</td>
+          <td>{{$item->prioridad}}</td>
           <td>{{$item->prioridad}}</td>
 
+      
 
-          @foreach ($cargo as $carg)
-              @if ($item->bl_cargos_id == $carg->id)
-              <td>{{$carg->nombre}}</td>
-              @endif
+          @foreach ($solicitante as $sol)
+          @if ($item->bl_solicitantes_id == $sol->id)
+          <td>{{$sol->nombre}}</td>
+          @endif
+          @endforeach
+          @foreach ($solicitante as $sol)
+          @if ($item->bl_solicitantes_id == $sol->id)
+          <td>{{$sol->apellido}}</td>
+          @endif
           @endforeach
 
-          @foreach ($gerencia as $geren)
-              @if ($item->bl_gerencias_id == $geren->id)
-              <td>{{$geren->gerencia}}</td>
-              @endif
-          @endforeach
+
+      @foreach ($libra as $li)
+          @if ($item->bl_libras_id == $li->id)
+          <td>{{$li->nom_aplicacion}}</td>
+          @endif
+      @endforeach
 
 
-          $table->id();
-          $table->integer('solicitud_id');
-          $table->string('tipo_solicitud');
-          //$table->enum('tipo_solicitud', ['Seleccione...', 'Soporte', 'Incidencia', 'Requerimiento', 'Proyecto'])->default('Seleccione...');
-          $table->string('descripcion_solicitud');
-          $table->string('prioridad');
-          //$table->enum('prioridad', ['Seleccione...', 'Baja', 'Media', 'Alta'])->default('Seleccione...');
-          //$table->enum('prioridad', ['Seleccione...', 'Baja', 'Media', 'Alta'])->nullable()->default(['Seleccione...']);
-          $table->date('fecha_solicitud');
-          $table->date('calidad_fecha_ini');
-          $table->date('calidad_fecha_fin');
-          $table->date('fecha_cierre');
-          $table->string('porcentaje_avance');
-          $table->string('estatus');
-          //$table->enum('estatus', ['Seleccione...', 'Por iniciar', 'En proceso', 'En certificación', 'Suspendido', 'Anulado', 'Cerrado'])->default('Seleccione...');
-          //$table->enum('normativo', ['Seleccione...', 'Sí', 'No'])->default('Seleccione...');
-          $table->string('normativo');
-          $table->string('crq_calidad');
-          $table->string('crq_produccion');
-          $table->string('tipo_soporte');
-          //$table->enum('tipo_soporte', ['Seleccione...', 'Técnico', 'Funcional', 'Ambos'])->default('Seleccione...');
-          $table->unsignedBigInteger('bl_solicitantes_id');
-          $table->unsignedBigInteger('bl_libras_id');
-          $table->unsignedBigInteger('bl_especialistas_id');
-          $table->timestamps();
+      @foreach ($especialista as $esp)
+          @if ($item->bl_especialistas_id == $esp->id)
+          <td>{{$esp->nombres}}</td>
+          @endif
+      @endforeach
+      @foreach ($especialista as $esp)
+          @if ($item->bl_especialistas_id == $esp->id)
+          <td>{{$esp->apellidos}}</td>
+          @endif
+      @endforeach
 
 
 
