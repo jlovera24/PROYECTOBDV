@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Módulo de Especialistas</h1>
+    <h1>Módulo de Solicitudes</h1>
 @stop
 
 @section('content')
@@ -11,107 +11,131 @@
 
     
 
-  <form class="row g-3" action="{{route('especialista.store')}}" method="POST">
+  <form class="row g-2" action="{{route('solicitud.store')}}" method="POST">
         @csrf
 
-  <div class="col-md-4">
-    <label for="nombres" class="form-label">Nombres</label>
-    <input name="nombres" type="text" class="form-control" id="nombres" placeholder="Escribe uno o dos nombres" required>
+  <div class="col-md-2">
+    <label for="solicitud_id" class="form-label">ID Solicitud</label>
+    <input name="solicitud_id" type="text" class="form-control" id="solicitud_id" placeholder="Escribe uno o dos nombres" required>
   </div>
 
-  <div class="col-md-4">
-    <label for="apellidos" class="form-label">Apellidos</label>
-    <input name="apellidos" type="text" class="form-control" id="apellidos" placeholder="Escribe uno o dos nombres" required>
-  </div>
+ 
+ 
 
   <div class="col-md-2">
-    <label for="cedula" class="form-label">Cédula de Identidad</label>
-    <input name="cedula" type="text" class="form-control" id="cedula" placeholder="Escribe solo correos corporativos" required>
+    <label for="descripción_solicitud" class="form-label">Descripción</label>
+    <input name="descripción_solicitud" type="text" class="form-control" id="descripción_solicitud" placeholder="Escribe solo correos corporativos" required>
   </div>
 
 
 
   <div class="col-md-2">
-    <label for="fech_nacimiento" class="form-label">Fecha de Nacimiento</label>
-    <input name="fech_nacimiento" type="date" class="form-control" id="fech_nacimiento" placeholder="Escribe uno o dos nombres" required>
-  </div>
-  <div class="col-md-3">
-    <label for="nm_ct" class="form-label">NM o CT de usuario</label>
-    <input name="nm_ct" type="text" class="form-control" id="nm_ct" placeholder="Escribe el primer apellido" required>
-  </div>
-  <div class="col-md-3">
-    <label for="fecha_ing" class="form-label">Fecha Ingreso Institución</label>
-    <input name="fecha_ing" type="date" class="form-control" id="fecha_ing" placeholder="Escribe solo correos corporativos" required>
+    <label for="fecha_solicitud" class="form-label">Fecha</label>
+    <input name="fecha_solicitud" type="date" class="form-control" id="fecha_solicitud" placeholder="Escribe uno o dos nombres" required>
   </div>
 
-  <div class="col-md-3">
-    <label for="fecha_ing_dpto" class="form-label">Fecha Ingreso al Departamento</label>
-    <input name="fecha_ing_dpto" type="date" class="form-control" id="fecha_ing_dpto" placeholder="Escribe uno o dos nombres" required>
-  </div>
-    
-  <div class="col-md-3">
-    <label for="email" class="form-label">Correo Corporativo</label>
-    <input name="email" type="text" class="form-control" id="email" placeholder="Escribe solo correos corporativos" required>
+  <div class="col-md-2">
+    <label for="calidad_fecha_ini" class="form-label">Fecha Inicio Calidad</label>
+    <input name="calidad_fecha_ini" type="date" class="form-control" id="calidad_fecha_ini" placeholder="Escribe uno o dos nombres" >
   </div>
 
+  <div class="col-md-2">
+    <label for="calidad_fecha_fin" class="form-label">Fecha Inicio Produccón</label>
+    <input name="calidad_fecha_fin" type="date" class="form-control" id="calidad_fecha_fin" placeholder="Escribe uno o dos nombres" >
+  </div>
+
+  <div class="col-md-2">
+    <label for="fecha_cierre" class="form-label">Fecha Cierre</label>
+    <input name="fecha_cierre" type="date" class="form-control" id="fecha_cierre" placeholder="Escribe uno o dos nombres" >
+  </div>
+
+  <div class="col-md-1">
+    <label for="porcentaje_avance" class="form-label">Porcentaje de Avance</label>
+    <input name="porcentaje_avance" type="text" class="form-control" id="porcentaje_avance" placeholder="Escribe el primer apellido" >
+  </div>
+
+  
 
 
-<div class="col-md-4">
-  <label for="bl_cargos_id" class="form-label">Cargo:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_cargos_id" id="bl_cargos_id">
+  <div class="col-md-2">
+    <label for="crq_calidad" class="form-label">CRQ Calidad</label>
+    <input name="crq_calidad" type="text" class="form-control" id="crq_calidad" placeholder="Escribe solo correos corporativos" >
+  </div>
 
-    @foreach ($cargo as $carg)
-    <option value="{{$carg->id}}">{{$carg->nombre}}</option>
-    @endforeach 
-    
-  </select>
-</div>
-
-<div class="col-md-4">
-  <label for="bl_gerencias_id" class="form-label">Gerencia:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
-
-    @foreach ($gerencia as $geren)
-    <option value="{{$geren->id}}">{{$geren->gerencia}}</option>
-    @endforeach 
-    
-  </select>
-</div>
-
-<div class="col-md-5">
-  <label for="bl_ubicaciones_fisicas_id" class="form-label">Ubicación Física:</label>
-  <select class="form-select" aria-label="Default select example" name="bl_ubicaciones_fisicas_id" id="bl_ubicaciones_fisicas_id">
-
-    @foreach ($ubicacion_fisica as $ubi)
-    <option value="{{$ubi->id}}">{{$ubi->piso}}</option>
-    @endforeach 
-    
-  </select>
-</div>
+  <div class="col-md-2">
+    <label for="crq_produccion" class="form-label">CRQ Producción</label>
+    <input name="crq_produccion" type="text" class="form-control" id="crq_produccion" placeholder="Escribe solo correos corporativos" >
+  </div>
 
 
-<label for="operadora" class="form-label">Operadora</label>
-  <select class="form-select form-select-sm col-md-3" name="operadora" id="operadora" aria-placeholder="Seleccione una Opción" required>
-    <option value="" selected disabled>Seleccione una Operadora</option>
-    <option value="0412">0412</option>
-    <option value="0424">0424</option>
-    <option value="0414">0414</option>
-    <option value="0426">0426</option>
-    <option value="0416">0416</option>
-    <option value="0212">0212</option>
-
+  <label for="tipo_solicitud" class="form-label">Prioridad</label>
+  <select class="form-select form-select-sm col-md-2" name="tipo_solicitud" id="tipo_solicitud" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una prioridad</option>
+    <option value="Soporte">Soporte</option>
+    <option value="Requerimiento">Requerimiento</option>
+    <option value="Incidencia">Incidencia</option>
+    <option value="Proyecto">Proyecto</option>
   </select>
 
-  <div class="col-md-3">
-    <label for="numero" class="form-label">Número de Teléfono</label>
-    <input name="numero" type="text" class="form-control" id="numero" placeholder="Escribe el primer apellido" required>
-  </div>
 
 
-  <div class="col-md-3">
-    <label for="descripcion" class="form-label">Dirección</label>
-    <input name="descripcion" type="text" class="form-control" id="descripcion" placeholder="Escribe el primer apellido" required>
-  </div>
+  <label for="tipo_soporte" class="form-label">Tipo de Soporte</label>
+  <select class="form-select form-select-sm col-md-2" name="tipo_soporte" id="tipo_soporte" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione un tipo de soporte</option>
+    <option value="Funcional">Funcional</option>
+    <option value="Técnico">Técnico</option>
+    <option value="Prioridad">Prioridad</option>
+  </select>
+
+  <label for="estatus" class="form-label">Estatus</label>
+  <select class="form-select form-select-sm col-md-3" name="estatus" id="estatus" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione un Estatus</option>
+    <option value="Por Iniciar">Por Iniciar</option>
+    <option value="En Proceso">En Proceso</option>
+    <option value="En Certificación">En Certificación</option>
+    <option value="Suspendido">Suspendido</option>
+    <option value="Anulado">Anulado</option>
+    <option value="Cerrado">Cerrado</option>
+  </select>
+
+
+
+  <label for="normativo" class="form-label">¿Normativo?</label>
+  <select class="form-select form-select-sm col-md-2" name="normativo" id="normativo" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una prioridad</option>
+    <option value="Sí">Sí</option>
+    <option value="No">No</option>
+  </select>
+
+
+  <label for="prioridad" class="form-label">Prioridad</label>
+  <select class="form-select form-select-sm col-md-2" name="prioridad" id="prioridad" aria-placeholder="Seleccione una Opción" required>
+    <option value="" selected disabled>Seleccione una prioridad</option>
+    <option value="ALTA">ALTA</option>
+    <option value="MEDIA">MEDIA</option>
+    <option value="BAJA">BAJA</option>
+  </select>
+
+
+  <div class="col-md-2">
+    <label for="bl_solicitantes_id" class="form-label">Solcitante:</label>
+    <select class="form-select" aria-label="Default select example" name="bl_solicitantes_id" id="bl_solicitantes_id" required>
+  
+      @foreach ($solicitante as $soli)
+      <option value="{{$soli->id}}">{{$soli->email}}</option>
+      @endforeach 
+      
+    </select>
+
+    <div class="col-md-2">
+      <label for="bl_libras_id" class="form-label">Aplicación</label>
+      <select class="form-select" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
+    
+        @foreach ($libra as $li)
+        <option value="{{$li->id}}">{{$li->nom_aplicacion}}</option>
+        @endforeach 
+        
+      </select>
  
   
   {{--
@@ -131,8 +155,8 @@ Botones Regresar y Guardar
 
 --}}
 
-  <div class="col-12">
-    <a href="{{route('especialista.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
+  <div class="col-6">
+    <a href="{{route('solicitud.index')}}" class="btn btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-return-left" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M14.5 1.5a.5.5 0 0 1 .5.5v4.8a2.5 2.5 0 0 1-2.5 2.5H2.707l3.347 3.346a.5.5 0 0 1-.708.708l-4.2-4.2a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 8.3H12.5A1.5 1.5 0 0 0 14 6.8V2a.5.5 0 0 1 .5-.5z"/>
       </svg> Regresar</a>
 

@@ -45,21 +45,31 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">Nombres</th>
-          <th scope="col">Apellidos</th>
-          <th scope="col">Idenficador NM o CT</th>
-          <th scope="col">Correo Corporativo</th>       
-          <th scope="col">Cargo</th>
-          <th scope="col">Gerencia</th>
+          <th scope="col">ID de Solicitud</th>
+          <th scope="col">Tipo de Solicitud</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Fecha</th>       
+          <th scope="col">Fecha de Inicio Calidad</th>
+          <th scope="col">Fecha de Cierre</th>
+          <th scope="col">Fecha Fin de Calidad</th>
+          <th scope="col">Porcentaje de Avance</th>
+          <th scope="col">Estatus</th>
+          <th scope="col">CRQ Calidad</th>
+          <th scope="col">CRQ Producción</th>
+          <th scope="col">Tipo de Soporte</th>
+          <th scope="col">Prioridad</th>
+          <th scope="col">Nombre Solicitante</th>
+          <th scope="col">Apellido Solicitante</th>
+          <th scope="col">Nombre de Aplicación</th>
+          <th scope="col">Nombre Esp. Responsable</th>
+          <th scope="col">Apellido Esp. Responsable</th>
+
           <th scope="col-2">Visualizar</th>
           <th scope="col-2">Modificar</th> 
           <th scope="col-2">Eliminar</th>
-
-
         </tr>
       </thead>
       <tbody>
-
 
       @foreach ($solicitud as $item)
       
@@ -78,7 +88,6 @@
           <td>{{$item->crq_calidad}}</td>
           <td>{{$item->crq_produccion}}</td>
           <td>{{$item->tipo_soporte}}</td>
-          <td>{{$item->prioridad}}</td>
           <td>{{$item->prioridad}}</td>
 
       
