@@ -22,17 +22,33 @@
  
  
 
-  <div class="col-md-2">
-    <label for="descripción_solicitud" class="form-label">Descripción</label>
-    <input name="descripción_solicitud" type="text" class="form-control" id="descripción_solicitud" placeholder="Escribe solo correos corporativos" required>
+  <div class="col-md-7">
+    <label for="descripcion_solicitud" class="form-label">Descripción</label>
+    <input name="descripcion_solicitud" type="text" class="form-control" id="descripcion_solicitud" placeholder="Escribe solo correos corporativos" required>
   </div>
 
 
 
-  <div class="col-md-2">
+  <div class="col-md-3">
     <label for="fecha_solicitud" class="form-label">Fecha</label>
     <input name="fecha_solicitud" type="date" class="form-control" id="fecha_solicitud" placeholder="Escribe uno o dos nombres" required>
   </div>
+
+  <div class="col-md-12">
+    <h5></h5>
+  </div>
+  <div class="col-md-12">
+    <h5></h5>
+  </div>
+  <div class="col-md-12">
+    <h5></h5>
+  </div>
+
+<div class="col-md-12">
+
+  <h5>Anexar información en caso de Aplicar</h5>
+</div>
+
 
   <div class="col-md-2">
     <label for="calidad_fecha_ini" class="form-label">Fecha Inicio Calidad</label>
@@ -49,7 +65,7 @@
     <input name="fecha_cierre" type="date" class="form-control" id="fecha_cierre" placeholder="Escribe uno o dos nombres" >
   </div>
 
-  <div class="col-md-3">
+  <div class="col-md-2">
     <label for="porcentaje_avance" class="form-label">Porcentaje de Avance</label>
     <input name="porcentaje_avance" type="text" class="form-control" id="porcentaje_avance" placeholder="Escribe el primer apellido" >
   </div>
@@ -104,7 +120,7 @@
   <div class="col-md-4">
   <label for="normativo" class="form-label">¿Normativo?</label>
   <select class="form-control" name="normativo" id="normativo" aria-placeholder="Seleccione una Opción" required>
-    <option value="" selected disabled>Seleccione una prioridad</option>
+    <option value="" selected disabled>Seleccione</option>
     <option value="Sí">Sí</option>
     <option value="No">No</option>
   </select>
@@ -132,9 +148,9 @@
     </select>
   </div>
 
-    <div class="col-md-2">
-      <label for="bl_libras_id" class="form-label">Especialista Responsable</label>
-      <select class="form-control" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
+    <div class="col-md-3">
+      <label for="bl_especialistas_id" class="form-label">Especialista Responsable</label>
+      <select class="form-control" aria-label="Default select example" name="bl_especialistas_id" id="bl_especialistas_id" required>
     
         @foreach ($especialista as $esp)
         <option value="{{$esp->id}}">{{$esp->email}}</option>
@@ -143,7 +159,7 @@
       </select>
     </div>
 
-    <div class="col-md-2">
+    <div class="col-md-3">
       <label for="bl_libras_id" class="form-label">Aplicación</label>
       <select class="form-control" aria-label="Default select example" name="bl_libras_id" id="bl_libras_id" required>
     

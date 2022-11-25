@@ -48,16 +48,24 @@
           <th scope="col">ID de Solicitud</th>
           <th scope="col">Tipo de Solicitud</th>
           <th scope="col">Descripción</th>
-          <th scope="col">Fecha</th>       
-          <th scope="col">Fecha de Inicio Calidad</th>
+          <th scope="col">Fecha</th>   
+          
+          
+      {{--    <th scope="col">Fecha de Inicio Calidad</th>
           <th scope="col">Fecha de Cierre</th>
           <th scope="col">Fecha Fin de Calidad</th>
-          <th scope="col">Porcentaje de Avance</th>
+          <th scope="col">Porcentaje de Avance</th> --}}
+
+
           <th scope="col">Estatus</th>
+
+
+{{--
           <th scope="col">CRQ Calidad</th>
           <th scope="col">CRQ Producción</th>
           <th scope="col">Tipo de Soporte</th>
-          <th scope="col">Prioridad</th>
+          <th scope="col">Prioridad</th>    --}}
+
           <th scope="col">Nombre Solicitante</th>
           <th scope="col">Apellido Solicitante</th>
           <th scope="col">Nombre de Aplicación</th>
@@ -80,15 +88,22 @@
           <td>{{$item->tipo_solicitud}}</td>
           <td>{{$item->descripcion_solicitud}}</td>
           <td>{{$item->fecha_solicitud}}</td>
+
+{{--
           <td>{{$item->calidad_fecha_ini}}</td>
           <td>{{$item->calidad_fecha_fin}}</td>
           <td>{{$item->fecha_cierre}}</td>
-          <td>{{$item->porcentaje_avance}}</td>
+          <td>{{$item->porcentaje_avance}}</td>   --}}
+
+
           <td>{{$item->estatus}}</td>
+
+
+{{--
           <td>{{$item->crq_calidad}}</td>
           <td>{{$item->crq_produccion}}</td>
           <td>{{$item->tipo_soporte}}</td>
-          <td>{{$item->prioridad}}</td>
+          <td>{{$item->prioridad}}</td>   --}}
 
       
 

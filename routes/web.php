@@ -102,6 +102,7 @@ Route::post('admin/solicitud/store', [App\Http\Controllers\SolicitudController::
 Route::get('admin/solicitud/edit/{id}', [App\Http\Controllers\SolicitudController::class, 'edit', 'edi'])->name('solicitud.edit');
 Route::put('admin/solicitud/update/{id}', [App\Http\Controllers\SolicitudController::class, 'update'])->name('solicitud.update');
 Route::delete('admin/solicitud/destroy/{id}', [App\Http\Controllers\SolicitudController::class, 'destroy'])->name('solicitud.destroy');
+Route::get('admin/solicitud/more/{id}', [App\Http\Controllers\SolicitudController::class, 'more'])->name('solicitud.more');
 
 
 

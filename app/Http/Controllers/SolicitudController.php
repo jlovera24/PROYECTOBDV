@@ -45,10 +45,8 @@ class SolicitudController extends Controller
     public function store(Request $request)
     {
         //$ubicacion_fisica = ubicacion_fisica::all();
-        $solicitud = Solicitud::all();
-        $especialista = new Especialista();
-        $solicitante = Solicitante::all();
-        $libra = Libra::all();
+        $solicitud = new Solicitud();
+        
 
         $solicitud->solicitud_id = $request->post('solicitud_id');
         $solicitud->tipo_solicitud = $request->post('tipo_solicitud');
@@ -60,6 +58,7 @@ class SolicitudController extends Controller
         $solicitud->fecha_cierre = $request->post('fecha_cierre');
         $solicitud->porcentaje_avance = $request->post('porcentaje_avance');
         $solicitud->estatus = $request->post('estatus');
+        $solicitud->normativo = $request->post('normativo');
         $solicitud->crq_calidad = $request->post('crq_calidad');
         $solicitud->crq_produccion = $request->post('crq_produccion');
         $solicitud->tipo_soporte = $request->post('tipo_soporte');
@@ -70,23 +69,16 @@ class SolicitudController extends Controller
         
 
         $solicitud->save(); 
-
-      
-  
-
-        
         
         
         //$especialista->telefonos()->attach('bl_telefonos_id->id',['bl_especialistas_id'=>'bl_especialistas_id']);
-
-        
         
         
 //$espe= Especialista();
 //dd($espe)->telefonos()->attach('id',['bl_especialistas_id'=>'id']);
         
 
-        return redirect()->route("especialista.index")->with("success", "¡Registro agregado exitosamente!");
+        return redirect()->route("solicitud.index")->with("success", "¡Registro agregado exitosamente!");
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
