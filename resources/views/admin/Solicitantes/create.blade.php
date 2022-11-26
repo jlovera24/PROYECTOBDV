@@ -19,19 +19,28 @@
     <label for="apellido" class="form-label">Apellido</label>
     <input name="apellido" type="text" class="form-control" id="apellido" placeholder="Escribe el primer apellido" required>
   </div>
+
+  <div class="col-md-12">
+    <h5><hr></h5>
+  </div>
+
   <div class="col-md-3">
     <label for="email" class="form-label">Correo Corporativo</label>
     <input name="email" type="text" class="form-control" id="email" placeholder="Escribe solo correos corporativos" required>
   </div>
   
-<div>
-  <select class="form-select" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
+  <div class="col-md-3">
+    <label for="email" class="form-label">Gerencia a la que pertenece</label>
+  <select class="form-control" aria-label="Default select example" name="bl_gerencias_id" id="bl_gerencias_id">
 
     @foreach ($gerencia as $item)
     <option value="{{$item->id}}">{{$item->gerencia}}</option>
     @endforeach
     
   </select>
+</div>
+<div class="col-md-12">
+  <h5><hr></h5>
 </div>
 
   

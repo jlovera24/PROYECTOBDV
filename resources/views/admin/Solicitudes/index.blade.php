@@ -45,7 +45,7 @@
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">ID de Solicitud</th>
+          <th scope="col">ID de las Solicitud</th>
           <th scope="col">Tipo de Solicitud</th>
           <th scope="col">Descripción</th>
           <th scope="col">Fecha</th>   

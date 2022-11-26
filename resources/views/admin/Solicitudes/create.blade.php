@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Módulo de Solicitudes</h1>
+    <h1>Módulo de Solicitud</h1>
 @stop
 
 @section('content')
@@ -61,7 +61,7 @@
   </select>
 </div>
 
-  <div class="col-md-3">
+  <div class="col-md-2">
   <label for="estatus" class="form-label">Estatus</label>
   <select class="form-control" name="estatus" id="estatus" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione un Estatus</option>
@@ -74,13 +74,18 @@
   </select>
 </div>
 
-<div class="col-md-3">
+<div class="col-md-2">
   <label for="normativo" class="form-label">¿Normativo?</label>
   <select class="form-control" name="normativo" id="normativo" aria-placeholder="Seleccione una Opción" required>
     <option value="" selected disabled>Seleccione</option>
     <option value="Sí">Sí</option>
     <option value="No">No</option>
   </select>
+</div>
+
+<div class="col-md-2">
+  <label for="porcentaje_avance" class="form-label">Porcentaje de Avance</label>
+  <input name="porcentaje_avance" type="text" class="form-control" id="porcentaje_avance" placeholder="Escribe el primer apellido" >
 </div>
 
 
@@ -149,12 +154,12 @@
   </div>
   
   
-    <div class="col-md-2">
+    <div class="col-md-3">
       <label for="calidad_fecha_ini" class="form-label">Fecha Inicio Calidad</label>
       <input name="calidad_fecha_ini" type="date" class="form-control" id="calidad_fecha_ini" placeholder="Escribe uno o dos nombres" >
     </div>
   
-    <div class="col-md-2">
+    <div class="col-md-3">
       <label for="calidad_fecha_fin" class="form-label">Fecha Inicio Produccón</label>
       <input name="calidad_fecha_fin" type="date" class="form-control" id="calidad_fecha_fin" placeholder="Escribe uno o dos nombres" >
     </div>
@@ -164,22 +169,15 @@
       <input name="fecha_cierre" type="date" class="form-control" id="fecha_cierre" placeholder="Escribe uno o dos nombres" >
     </div>
   
-    <div class="col-md-2">
-      <label for="porcentaje_avance" class="form-label">Porcentaje de Avance</label>
-      <input name="porcentaje_avance" type="text" class="form-control" id="porcentaje_avance" placeholder="Escribe el primer apellido" >
-    </div>
-  
     
-  
-  
     <div class="col-md-2">
       <label for="crq_calidad" class="form-label">CRQ Calidad</label>
-      <input name="crq_calidad" type="text" class="form-control" id="crq_calidad" placeholder="Escribe solo correos corporativos" >
+      <input name="crq_calidad" type="text" class="form-control" id="crq_calidad" placeholder="Código control de cambio" >
     </div>
   
     <div class="col-md-2">
       <label for="crq_produccion" class="form-label">CRQ Producción</label>
-      <input name="crq_produccion" type="text" class="form-control" id="crq_produccion" placeholder="Escribe solo correos corporativos" >
+      <input name="crq_produccion" type="text" class="form-control" id="crq_produccion" placeholder="Código control de cambio" >
     </div>
 
 

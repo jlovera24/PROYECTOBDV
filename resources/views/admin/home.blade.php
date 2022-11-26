@@ -40,7 +40,7 @@
           </div>
           <div class="col-md-12">
             <center>
-    <img src="vendor/adminlte/dist/img/proyecto.jpeg" float="center"  class="img-center" width="600px" height="260px" alt="principal" style="opacity:0.4">
+    <img src="vendor/adminlte/dist/img/proyecto.jpeg" float="center"  class="img-center" width="600px" height="260px" alt="principal" style="opacity:0.5">
 </center>
 
 </div>
